@@ -119,6 +119,22 @@ Nri_connects/
    npm run preview
    ```
 
+### 🌐 Deploying to Vercel
+This repository includes a pre-configured `vercel.json` optimized for Vite SPAs.
+
+1. Push changes to GitHub:
+   ```bash
+   git add vercel.json
+   git commit -m "chore: add vercel configuration for deployment"
+   git push origin main
+   ```
+2. Import the repository in [Vercel Dashboard](https://vercel.com/new).
+3. Vercel automatically detects **Vite** settings:
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. Click **Deploy**.
+
 ---
 
 ## 📞 Business & Contact Information
