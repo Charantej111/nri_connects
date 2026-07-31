@@ -166,7 +166,7 @@ export default function ServiceDetailPage({ service, setActivePage, onOpenBookin
                 alt={`${service.title} Primary View`}
                 className="w-full h-full object-cover"
                 style={{ objectPosition: getObjectPosition(service.id) }}
-                onError={(e) => { e.target.onerror = null; e.target.src = service.image; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80'; }}
               />
             </div>
 

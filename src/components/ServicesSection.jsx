@@ -133,7 +133,7 @@ export default function ServicesSection({ onSelectService, setActivePage, onOpen
                     style={{ objectPosition: getObjectPosition(svc.id) }}
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = svc.image;
+                      e.target.src = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80';
                     }}
                   />
 

@@ -51,7 +51,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 342,
     shortDesc: "Complete physical monitoring, boundary security, legal documentation, tenant management, and periodic photo/video inspection reports for your land & homes in India.",
-    image: "/Public/property-care.jpg",
+    image: "/assets/Property Care_1.jpg",
     features: [
       "Bi-weekly & Monthly Physical Plot Inspections",
       "High-Resolution HD Photo/Video Inspection Reports",
@@ -77,7 +77,7 @@ export const SERVICES_CATALOG = [
     rating: 5.0,
     reviewsCount: 489,
     shortDesc: "Immediate medical response, 24/7 ambulance coordination, emergency hospital admission, doctor visits at home, and real-time medical updates to NRIs abroad.",
-    image: "/Public/quick-medical.jpg",
+    image: "/assets/Quick Medical Facility_1.jpeg",
     features: [
       "Guaranteed Emergency SOS Rapid Response",
       "Preferred Hospital Bed Reservation & Admission",
@@ -103,7 +103,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 295,
     shortDesc: "Compassionate, background-verified full-time or part-time caregivers, bedside nurses, and companion attendants for daily elderly support in India.",
-    image: "/Public/attendants.jpg",
+    image: "/assets/Provision of Attendants_1.jpg",
     features: [
       "Rigorous Police Verification & Background Checks",
       "Full-Time (24/7) or Part-Time (Shift-based) Options",
@@ -129,7 +129,7 @@ export const SERVICES_CATALOG = [
     rating: 4.8,
     reviewsCount: 210,
     shortDesc: "Personalized wellness routines, certified home physiotherapists, gentle senior yoga instructors, and regular BP/Sugar/Pulse health monitoring.",
-    image: "/Public/physiotherapy.jpg",
+    image: "/assets/Routine Health Exercise_1.jpg",
     features: [
       "Certified Physiotherapists for Joint & Post-Stroke Recovery",
       "Gentle Senior Yoga & Breathing Mobility Training",
@@ -154,7 +154,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 380,
     shortDesc: "Comprehensive plumbing, electrical repairs, painting, AC servicing, carpentry, deep cleaning, roof waterproofing, and pest control for parental homes.",
-    image: "/Public/house-maintenance.jpg",
+    image: "/assets/House Maintenance_1.png",
     features: [
       "Verified Plumbers, Electricians & AC Technicians",
       "Full House Deep Cleaning & Sanitization",
@@ -179,7 +179,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 175,
     shortDesc: "Life Certificate submission (Jeevan Pramaan), pension retrieval support, bank account updates, income tax filing, and senior citizen card processing.",
-    image: "/Public/pensioners-assistance.jpg",
+    image: "/assets/Pensioners Assistance_1.png",
     features: [
       "Digital Life Certificate (Jeevan Pramaan) Doorstep Bio-metric Submission",
       "Bank Pension Portal Updates & KYC Verification",
@@ -204,7 +204,7 @@ export const SERVICES_CATALOG = [
     rating: 4.8,
     reviewsCount: 420,
     shortDesc: "Safe shipping of confidential legal documents, medicines, traditional clothes, homemade delicacies, and gifts between India and US/UK/Canada/UAE.",
-    image: "/Public/courier-services.jpg",
+    image: "/assets/Courier Services_1.jpg",
     features: [
       "Doorstep Pickup from Any City in India",
       "Customs-Compliant International Medicine Shipping",
@@ -229,7 +229,7 @@ export const SERVICES_CATALOG = [
     rating: 5.0,
     reviewsCount: 512,
     shortDesc: "Craving home flavors? Freshly prepared traditional mango, chicken, mutton, lemon pickles, ghee sweets, and spices crafted with traditional recipes.",
-    image: "/Public/assets/Design inspirations/homemade_pickels.png",
+    image: "/assets/Home Made Pickles_1.png",
     features: [
       "100% Traditional Hygiene Hand-Crafted Recipes",
       "Avakaya Mango, Gongura, Non-Veg Chicken & Mutton Pickles",
@@ -254,7 +254,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 165,
     shortDesc: "Organized day trips, temple & pilgrimage visits, movie shows, social club meetups, and pleasant outings with wheelchair & escort support.",
-    image: "/Public/recreation-outing.jpg",
+    image: "/assets/Recreation and Outing_1.png",
     features: [
       "Chauffeur-Driven AC Vehicle with Wheelchair Accessibility",
       "Dedicated Escort Companion throughout the Journey",
@@ -279,7 +279,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 230,
     shortDesc: "Complete travel arrangements for parents visiting children abroad: flight tickets, wheelchair assistance at airports, travel insurance, and transit guidance.",
-    image: "/Public/tours-travels.jpg",
+    image: "/assets/Tours and Travels Abroad_1.png",
     features: [
       "Optimal Route Flight Ticket Booking with Senior Discount",
       "Airport Escort, Porter & Wheelchair Pre-Booking",
@@ -304,7 +304,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 310,
     shortDesc: "Complete visa application guidance for US B1/B2, Schengen, UK Visitor, and Canada visas for elderly parents, including DS-160 and interview prep.",
-    image: "/Public/visa-assistance.jpg",
+    image: "/assets/Visa Assistance_1.jpg",
     features: [
       "Form DS-160 / Online Visa Application Completion",
       "US Consulate Interview Slot Appointment Booking",
