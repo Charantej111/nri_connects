@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { SERVICES_CATALOG } from '../data/nriContent';
+import { Menu, X, ChevronDown, ShieldCheck, HeartHandshake, PhoneCall } from 'lucide-react';
+import { SERVICES_CATALOG, CONTACT_INFO } from '../data/nriContent';
+import { getAssetUrl } from '../utils/assets';
 
 export default function Navbar({ activePage, setActivePage, onOpenBookingModal, onSelectService }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,13 +46,9 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
               className="flex items-center text-left focus:outline-none flex-shrink-0"
             >
               <img
-                src="/assets/logo.png"
+                src={getAssetUrl('logo.png')}
                 alt="NRI Connects Logo"
                 className="h-16 sm:h-20 lg:h-[56px] w-auto max-w-[280px] object-contain transition-transform hover:scale-105"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "/logo.png";
-                }}
               />
             </button>
 

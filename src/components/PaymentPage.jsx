@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import {
   CreditCard, Landmark, CheckCircle2, Copy, Check,
-  Smartphone, ShieldCheck
+  Smartphone, ShieldCheck, DollarSign
 } from 'lucide-react';
 import { BANK_DETAILS, SERVICES_CATALOG, CONTACT_INFO } from '../data/nriContent';
+import { getAssetUrl } from '../utils/assets';
 import CountryCodePicker from './CountryCodePicker';
 import CustomSelect from './CustomSelect';
 
@@ -191,7 +192,7 @@ export default function PaymentPage({ setActivePage }) {
                           : 'border-slate-200 hover:border-slate-300'
                         }`}
                     >
-                      <img src="/assets/paypal.png" alt="PayPal" className="h-14 w-auto max-w-[95%] object-contain" />
+                      <img src={getAssetUrl('paypal.png')} alt="PayPal" className="h-14 w-auto max-w-[95%] object-contain" />
                     </button>
 
                     <button
@@ -202,7 +203,7 @@ export default function PaymentPage({ setActivePage }) {
                           : 'border-slate-200 hover:border-slate-300'
                         }`}
                     >
-                      <img src="/assets/gpay.png" alt="Google Pay" className="h-14 w-auto max-w-[95%] object-contain" />
+                      <img src={getAssetUrl('gpay.png')} alt="Google Pay" className="h-14 w-auto max-w-[95%] object-contain" />
                     </button>
 
                     <button
@@ -213,7 +214,7 @@ export default function PaymentPage({ setActivePage }) {
                           : 'border-slate-200 hover:border-slate-300'
                         }`}
                     >
-                      <img src="/assets/phonepe.png" alt="PhonePe" className="h-14 w-auto max-w-[95%] object-contain" />
+                      <img src={getAssetUrl('phonepe.png')} alt="PhonePe" className="h-14 w-auto max-w-[95%] object-contain" />
                     </button>
 
                     <button
@@ -224,7 +225,7 @@ export default function PaymentPage({ setActivePage }) {
                           : 'border-slate-200 hover:border-slate-300'
                         }`}
                     >
-                      <img src="/assets/paytm.png" alt="Paytm" className="h-14 w-auto max-w-[95%] object-contain" />
+                      <img src={getAssetUrl('paytm.png')} alt="Paytm" className="h-14 w-auto max-w-[95%] object-contain" />
                     </button>
                   </div>
                 </div>
@@ -257,7 +258,7 @@ export default function PaymentPage({ setActivePage }) {
                 {/* HDFC Logo Box */}
                 <div className="mx-auto flex justify-center pb-2">
                   <img
-                    src="/assets/hdfc.png"
+                    src={getAssetUrl('hdfc.png')}
                     alt="HDFC Bank"
                     className="h-20 w-auto object-contain"
                   />
@@ -311,9 +312,9 @@ export default function PaymentPage({ setActivePage }) {
 
                 {/* UPI Apps Logos */}
                 <div className="flex items-center justify-center space-x-6">
-                  <img src="/assets/paytm.png" alt="Paytm" className="h-14 w-auto object-contain" />
-                  <img src="/assets/phonepe.png" alt="PhonePe" className="h-14 w-auto object-contain" />
-                  <img src="/assets/gpay.png" alt="Google Pay" className="h-14 w-auto object-contain" />
+                  <img src={getAssetUrl('paytm.png')} alt="Paytm" className="h-14 w-auto object-contain" />
+                  <img src={getAssetUrl('phonepe.png')} alt="PhonePe" className="h-14 w-auto object-contain" />
+                  <img src={getAssetUrl('gpay.png')} alt="Google Pay" className="h-14 w-auto object-contain" />
                 </div>
 
                 {/* Instructions */}

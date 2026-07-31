@@ -1,5 +1,7 @@
 // Comprehensive Authoritative Content for NRI Connects
 
+import { getAssetUrl } from '../utils/assets';
+
 export const CONTACT_INFO = {
   phone: "+91 988 588 0017",
   whatsapp: "+919885880017",
@@ -51,7 +53,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 342,
     shortDesc: "Complete physical monitoring, boundary security, legal documentation, tenant management, and periodic photo/video inspection reports for your land & homes in India.",
-    image: "/assets/Property Care_1.jpg",
+    image: getAssetUrl('Property Care_2.png'),
     features: [
       "Bi-weekly & Monthly Physical Plot Inspections",
       "High-Resolution HD Photo/Video Inspection Reports",
@@ -77,7 +79,7 @@ export const SERVICES_CATALOG = [
     rating: 5.0,
     reviewsCount: 489,
     shortDesc: "Immediate medical response, 24/7 ambulance coordination, emergency hospital admission, doctor visits at home, and real-time medical updates to NRIs abroad.",
-    image: "/assets/Quick Medical Facility_1.jpeg",
+    image: getAssetUrl('Quick Medical Facility_2.png'),
     features: [
       "Guaranteed Emergency SOS Rapid Response",
       "Preferred Hospital Bed Reservation & Admission",
@@ -103,7 +105,7 @@ export const SERVICES_CATALOG = [
     rating: 4.9,
     reviewsCount: 295,
     shortDesc: "Compassionate, background-verified full-time or part-time caregivers, bedside nurses, and companion attendants for daily elderly support in India.",
-    image: "/assets/Provision of Attendants_1.jpg",
+    image: getAssetUrl('Provision Of Attendants_2.png'),
     features: [
       "Rigorous Police Verification & Background Checks",
       "Full-Time (24/7) or Part-Time (Shift-based) Options",
@@ -129,7 +131,7 @@ export const SERVICES_CATALOG = [
     rating: 4.8,
     reviewsCount: 210,
     shortDesc: "Personalized wellness routines, certified home physiotherapists, gentle senior yoga instructors, and regular BP/Sugar/Pulse health monitoring.",
-    image: "/assets/Routine Health Exercise_1.jpg",
+    image: getAssetUrl('Routine Health Exercise_2.png'),
     features: [
       "Certified Physiotherapists for Joint & Post-Stroke Recovery",
       "Gentle Senior Yoga & Breathing Mobility Training",
@@ -153,8 +155,8 @@ export const SERVICES_CATALOG = [
     priceRange: "On-demand Quote",
     rating: 4.9,
     reviewsCount: 380,
-    shortDesc: "Comprehensive plumbing, electrical repairs, painting, AC servicing, carpentry, deep cleaning, roof waterproofing, and pest control for parental homes.",
-    image: "/assets/House Maintenance_1.png",
+    shortDesc: "Electrical repairs, plumbing solutions, carpentry, painting, deep home cleaning, and pest control managed by verified technicians.",
+    image: getAssetUrl('House Maintenance_2.png'),
     features: [
       "Verified Plumbers, Electricians & AC Technicians",
       "Full House Deep Cleaning & Sanitization",
@@ -178,8 +180,8 @@ export const SERVICES_CATALOG = [
     priceRange: "Flat Fee $35",
     rating: 4.9,
     reviewsCount: 175,
-    shortDesc: "Life Certificate submission (Jeevan Pramaan), pension retrieval support, bank account updates, income tax filing, and senior citizen card processing.",
-    image: "/assets/Pensioners Assistance_1.png",
+    shortDesc: "Doorstep assistance for Indian digital life certificates (Jeevan Pramaan), pension bank account issues, tax filing support, and legal documentation.",
+    image: getAssetUrl('Pensioners Assistance_2.png'),
     features: [
       "Digital Life Certificate (Jeevan Pramaan) Doorstep Bio-metric Submission",
       "Bank Pension Portal Updates & KYC Verification",
@@ -203,8 +205,8 @@ export const SERVICES_CATALOG = [
     priceRange: "Per Weight Rate",
     rating: 4.8,
     reviewsCount: 420,
-    shortDesc: "Safe shipping of confidential legal documents, medicines, traditional clothes, homemade delicacies, and gifts between India and US/UK/Canada/UAE.",
-    image: "/assets/Courier Services_1.jpg",
+    shortDesc: "Express doorstep pickup and international dispatch for essential medicines, homemade delicacies, land documents, and personal packages.",
+    image: getAssetUrl('Courier Services_2.png'),
     features: [
       "Doorstep Pickup from Any City in India",
       "Customs-Compliant International Medicine Shipping",
@@ -229,7 +231,7 @@ export const SERVICES_CATALOG = [
     rating: 5.0,
     reviewsCount: 512,
     shortDesc: "Craving home flavors? Freshly prepared traditional mango, chicken, mutton, lemon pickles, ghee sweets, and spices crafted with traditional recipes.",
-    image: "/assets/Home Made Pickles_1.png",
+    image: getAssetUrl('Home Made Pickles_2.png'),
     features: [
       "100% Traditional Hygiene Hand-Crafted Recipes",
       "Avakaya Mango, Gongura, Non-Veg Chicken & Mutton Pickles",
@@ -253,8 +255,8 @@ export const SERVICES_CATALOG = [
     priceRange: "From $65/outing",
     rating: 4.9,
     reviewsCount: 165,
-    shortDesc: "Organized day trips, temple & pilgrimage visits, movie shows, social club meetups, and pleasant outings with wheelchair & escort support.",
-    image: "/assets/Recreation and Outing_1.png",
+    shortDesc: "Chaperoned temple visits, peaceful park walks, senior club meetups, and local city excursions for your parents' mental refreshment.",
+    image: getAssetUrl('Recreation and Outing_2.png'),
     features: [
       "Chauffeur-Driven AC Vehicle with Wheelchair Accessibility",
       "Dedicated Escort Companion throughout the Journey",
@@ -278,8 +280,8 @@ export const SERVICES_CATALOG = [
     priceRange: "Custom Travel Plan",
     rating: 4.9,
     reviewsCount: 230,
-    shortDesc: "Complete travel arrangements for parents visiting children abroad: flight tickets, wheelchair assistance at airports, travel insurance, and transit guidance.",
-    image: "/assets/Tours and Travels Abroad_1.png",
+    shortDesc: "Complete travel support for parents visiting you overseas: airport drop-offs, wheelchair booking, flight companion assistance, and travel insurance.",
+    image: getAssetUrl('Tours and Travels Abroad_2.png'),
     features: [
       "Optimal Route Flight Ticket Booking with Senior Discount",
       "Airport Escort, Porter & Wheelchair Pre-Booking",
@@ -303,8 +305,8 @@ export const SERVICES_CATALOG = [
     priceRange: "From $85",
     rating: 4.9,
     reviewsCount: 310,
-    shortDesc: "Complete visa application guidance for US B1/B2, Schengen, UK Visitor, and Canada visas for elderly parents, including DS-160 and interview prep.",
-    image: "/assets/Visa Assistance_1.jpg",
+    shortDesc: "Hassle-free OCI card processing, Indian passport renewals, US/UK visa applications for parents, document attestation, and consulate filing.",
+    image: getAssetUrl('Visa Assistance_2.png'),
     features: [
       "Form DS-160 / Online Visa Application Completion",
       "US Consulate Interview Slot Appointment Booking",
@@ -521,7 +523,7 @@ export const NEWS_ARTICLES = [
     date: "July 24, 2026",
     readTime: "5 min read",
     snippet: "Discover essential physical inspection protocols, boundary wall maintenance, and title deed audits every non-resident Indian should implement.",
-    image: "/assets/Property Care_1.jpg"
+    image: getAssetUrl('Property Care_1.jpg')
   },
   {
     id: 2,
@@ -530,7 +532,7 @@ export const NEWS_ARTICLES = [
     date: "July 18, 2026",
     readTime: "4 min read",
     snippet: "Learn how doorstep biometric verification ensures seamless pension credits into Indian bank accounts without long queue hassles.",
-    image: "/assets/Pensioners Assistance_1.png"
+    image: getAssetUrl('Pensioners Assistance_1.png')
   },
   {
     id: 3,
@@ -539,6 +541,6 @@ export const NEWS_ARTICLES = [
     date: "July 10, 2026",
     readTime: "6 min read",
     snippet: "Key recommendations for 24/7 SOS helpline setup, hospital bed pre-registration, and regular health vitals tracking across timezones.",
-    image: "/assets/Quick Medical Facility_1.jpeg"
+    image: getAssetUrl('Quick Medical Facility_1.jpeg')
   }
 ];

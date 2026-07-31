@@ -4,20 +4,21 @@ import {
   PackageCheck, Utensils, Compass, Plane, FileText, ArrowRight
 } from 'lucide-react';
 import { SERVICES_CATALOG } from '../data/nriContent';
+import { getAssetUrl } from '../utils/assets';
 
 // Landing Page service card images (local _2 images uploaded by user)
 const service2Photos = {
-  'property-care': '/assets/Property Care_2.png',
-  'quick-medical-facility': '/assets/Quick Medical Facility_2.png',
-  'provision-of-attendants': '/assets/Provision Of Attendants_2.png',
-  'routine-health-exercise': '/assets/Routine Health Exercise_2.png',
-  'house-maintenance': '/assets/House Maintenance_2.png',
-  'pensioners-assistance': '/assets/Pensioners Assistance_2.png',
-  'courier-services': '/assets/Courier Services_2.png',
-  'home-made-pickles': '/assets/Home Made Pickles_2.png',
-  'recreation-and-outing': '/assets/Recreation and Outing_2.png',
-  'tours-and-travels-abroad': '/assets/Tours and Travels Abroad_2.png',
-  'visa-assistance': '/assets/Visa Assistance_2.png',
+  'property-care': getAssetUrl('Property Care_2.png'),
+  'quick-medical-facility': getAssetUrl('Quick Medical Facility_2.png'),
+  'provision-of-attendants': getAssetUrl('Provision Of Attendants_2.png'),
+  'routine-health-exercise': getAssetUrl('Routine Health Exercise_2.png'),
+  'house-maintenance': getAssetUrl('House Maintenance_2.png'),
+  'pensioners-assistance': getAssetUrl('Pensioners Assistance_2.png'),
+  'courier-services': getAssetUrl('Courier Services_2.png'),
+  'home-made-pickles': getAssetUrl('Home Made Pickles_2.png'),
+  'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
+  'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
+  'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
 };
 
 // Shift the focus of specific service images slightly downward to fit better
@@ -133,7 +134,7 @@ export default function ServicesSection({ onSelectService, setActivePage, onOpen
                     style={{ objectPosition: getObjectPosition(svc.id) }}
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80';
+                      e.target.src = svc.image;
                     }}
                   />
 

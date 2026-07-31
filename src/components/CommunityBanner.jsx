@@ -41,7 +41,7 @@ const WavesPattern = () => (
   </svg>
 );
 
-export default function CommunityBanner({ 
+export default function CommunityBanner({
   title = "Join our wonderful community today",
   primaryBtnText = "Browse plans",
   primaryBtnAction,
@@ -49,7 +49,7 @@ export default function CommunityBanner({
   secondaryBtnAction,
   variant = "leaf" // "leaf", "gallery", "news", "contact"
 }) {
-  
+
   // Custom styling mappings per variant
   const styles = {
     leaf: {
@@ -86,7 +86,7 @@ export default function CommunityBanner({
   return (
     <div className="max-w-6xl mx-auto px-4 mt-8">
       <div className={`relative rounded-3xl ${currentStyle.bg} text-white p-8 sm:p-12 shadow-xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6`}>
-        
+
         {/* Render the specialized SVG watermark pattern */}
         {currentStyle.pattern}
 
@@ -99,9 +99,9 @@ export default function CommunityBanner({
 
         {/* Action Buttons on right */}
         <div className="flex flex-col sm:flex-row items-center gap-4 z-10 flex-shrink-0 w-full sm:w-auto">
-          
+
           {primaryBtnText && (
-            <button 
+            <button
               onClick={primaryBtnAction}
               className={`w-full sm:w-auto bg-white ${currentStyle.textBtn} hover:bg-white/90 px-8 py-3.5 rounded-2xl text-sm font-extrabold transition-all shadow-sm text-center`}
             >
@@ -110,7 +110,7 @@ export default function CommunityBanner({
           )}
 
           {secondaryBtnText && (
-            <button 
+            <button
               onClick={secondaryBtnAction}
               className="w-full sm:w-auto border border-white/60 text-white hover:bg-white/10 px-8 py-3.5 rounded-2xl text-sm font-extrabold transition-all text-center"
             >

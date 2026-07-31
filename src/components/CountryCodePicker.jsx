@@ -21,7 +21,7 @@ export default function CountryCodePicker({ selected, onChange }) {
   };
 
   return (
-    <div className="relative flex-shrink-0">
+    <div className={`relative flex-shrink-0 ${isOpen ? 'z-50' : ''}`}>
 
       {/* Trigger Button showing graphical flag image + code */}
       <button
@@ -51,7 +51,7 @@ export default function CountryCodePicker({ selected, onChange }) {
 
       {/* Custom Dropdown Option Panel */}
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-52 bg-white border border-slate-100 shadow-2xl rounded-2xl p-1.5 z-50 max-h-60 overflow-y-auto custom-scrollbar animate-fadeIn">
+        <div className="absolute left-0 mt-2 w-52 bg-white border border-slate-100 shadow-2xl rounded-2xl p-1.5 z-[100] max-h-60 overflow-y-auto custom-scrollbar animate-fadeIn">
           {COUNTRIES.map((c, idx) => (
             <button
               key={idx}

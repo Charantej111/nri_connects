@@ -19,7 +19,7 @@ export default function CustomSelect({ value, onChange, options, className = "",
   const selectedOption = options.find(opt => opt.value === value) || { label: value, value };
 
   return (
-    <div className={`relative ${className}`} ref={containerRef}>
+    <div className={`relative ${className} ${isOpen ? 'z-50' : ''}`} ref={containerRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -30,7 +30,7 @@ export default function CustomSelect({ value, onChange, options, className = "",
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 mt-2 bg-white border border-slate-100 shadow-2xl rounded-2xl p-1.5 z-50 max-h-60 overflow-y-auto custom-scrollbar animate-fadeIn">
+        <div className="absolute left-0 right-0 mt-2 bg-white border border-slate-100 shadow-2xl rounded-2xl p-1.5 z-[100] max-h-60 overflow-y-auto custom-scrollbar animate-fadeIn">
           {options.map((opt, idx) => (
             <button
               key={idx}

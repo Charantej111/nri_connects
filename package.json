@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node migrate.mjs",
+    "prebuild": "node migrate.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

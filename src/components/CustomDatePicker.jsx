@@ -84,13 +84,12 @@ export default function CustomDatePicker({ value, onChange, className = "" }) {
         key={`day-${d}`}
         type="button"
         onClick={() => handleSelectDay(d)}
-        className={`w-8 h-8 rounded-full text-xs font-bold transition-colors flex items-center justify-center ${
-          isSelected 
-            ? 'bg-emerald-600 text-white shadow-md' 
-            : isToday 
-              ? 'border border-emerald-600 text-emerald-700 font-extrabold' 
-              : 'text-slate-700 hover:bg-emerald-50/70'
-        }`}
+        className={`w-8 h-8 rounded-full text-xs font-bold transition-colors flex items-center justify-center ${isSelected
+          ? 'bg-emerald-600 text-white shadow-md'
+          : isToday
+            ? 'border border-emerald-600 text-emerald-700 font-extrabold'
+            : 'text-slate-700 hover:bg-emerald-50/70'
+          }`}
       >
         {d}
       </button>
@@ -98,7 +97,7 @@ export default function CustomDatePicker({ value, onChange, className = "" }) {
   }
 
   return (
-    <div className={`relative ${className}`} ref={containerRef}>
+    <div className={`relative ${className} ${isOpen ? 'z-50' : ''}`} ref={containerRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -111,7 +110,7 @@ export default function CustomDatePicker({ value, onChange, className = "" }) {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 sm:left-0 mt-2 bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 z-50 w-72 animate-fadeIn">
+        <div className="absolute right-0 sm:left-0 mt-2 bg-white border border-slate-100 shadow-2xl rounded-2xl p-4 z-[100] w-72 animate-fadeIn">
           {/* Calendar Header */}
           <div className="flex items-center justify-between mb-4">
             <button

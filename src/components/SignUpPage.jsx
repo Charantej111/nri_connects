@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { User, Mail, Lock, UserPlus } from 'lucide-react';
+import { User, Mail, Phone, Lock, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { CITIES_SERVICED } from '../data/nriContent';
 import CountryCodePicker from './CountryCodePicker';
 import CustomSelect from './CustomSelect';
+import { getAssetUrl } from '../utils/assets';
 
 const cityOptions = CITIES_SERVICED.map(city => ({ value: city, label: city }));
 const countryOptions = [
@@ -44,10 +45,9 @@ export default function SignUpPage({ setActivePage }) {
         {/* Top Header */}
         <div className="text-center space-y-2">
           <img
-            src="/assets/logo.png"
+            src={getAssetUrl('logo.png')}
             alt="NRI Connects"
             className="h-12 w-auto mx-auto object-contain"
-            onError={(e) => { e.target.onerror = null; e.target.src = "/logo.png"; }}
           />
           <h2 className="text-2xl font-extrabold text-slate-900 font-display">Create Your Free Account</h2>
           <p className="text-xs text-slate-500 font-medium">Join 50,000+ NRI Families Caring for Parents & Assets in India</p>

@@ -5,6 +5,7 @@ import CommunityBanner from './CommunityBanner';
 import CountryCodePicker from './CountryCodePicker';
 import CustomSelect from './CustomSelect';
 import CustomDatePicker from './CustomDatePicker';
+import { getAssetUrl } from '../utils/assets';
 
 const cityOptions = CITIES_SERVICED.map(city => ({ value: city, label: city }));
 
@@ -18,42 +19,32 @@ const getObjectPosition = (id) => {
     'pensioners-assistance': 'center 30%',
     'home-made-pickles': 'center 30%',
     'recreation-and-outing': 'center 15%',
-    'tours-and-travels-abroad': 'center 30%',
+    'tours-and-travels-abroad': 'center 15%',
   };
-  return positions[id] || 'center 50%';
+  return positions[id] || 'center center';
 };
 
-export default function ServiceDetailPage({ service, setActivePage, onOpenBookingModal, onSelectService }) {
-  if (!service) {
-    return (
-      <div className="pt-28 pb-20 text-center space-y-4 font-sans">
-        <p className="text-sm text-slate-500">Service not found.</p>
-        <button onClick={() => setActivePage('services')} className="text-xs font-bold text-emerald-600 hover:underline">
-          Back to Services
-        </button>
-      </div>
-    );
-  }
+export default function ServiceDetailPage({ service: propService, serviceId, setActivePage, onOpenBookingModal, onSelectService }) {
+  const service = propService || SERVICES_CATALOG.find((s) => s.id === serviceId) || SERVICES_CATALOG[0];
 
   const currentIndex = SERVICES_CATALOG.findIndex(s => s.id === service.id);
   const prevService = currentIndex > 0 ? SERVICES_CATALOG[currentIndex - 1] : null;
   const nextService = currentIndex < SERVICES_CATALOG.length - 1 ? SERVICES_CATALOG[currentIndex + 1] : null;
 
-  const navigateToService = (svc) => {
-    if (onSelectService) {
-      onSelectService(svc);
+  const navigateToService = (targetService) => {
+    if (targetService && onSelectService) {
+      onSelectService(targetService);
       window.scrollTo(0, 0);
     }
   };
 
-  // Compact Appointment Form State
   const [form, setForm] = useState({
     name: '',
     email: '',
     countryCode: '+1',
     phone: '',
-    city: 'Hyderabad & Cyberabad',
-    preferredDate: '',
+    city: 'Hyderabad',
+    date: '',
     notes: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -65,32 +56,32 @@ export default function ServiceDetailPage({ service, setActivePage, onOpenBookin
 
   // PRIMARY Photo: local _2 images (used in landing page cards & detail page primary view)
   const primaryPhotos = {
-    'property-care': '/assets/Property Care_2.png',
-    'quick-medical-facility': '/assets/Quick Medical Facility_2.png',
-    'provision-of-attendants': '/assets/Provision Of Attendants_2.png',
-    'routine-health-exercise': '/assets/Routine Health Exercise_2.png',
-    'house-maintenance': '/assets/House Maintenance_2.png',
-    'pensioners-assistance': '/assets/Pensioners Assistance_2.png',
-    'courier-services': '/assets/Courier Services_2.png',
-    'home-made-pickles': '/assets/Home Made Pickles_2.png',
-    'recreation-and-outing': '/assets/Recreation and Outing_2.png',
-    'tours-and-travels-abroad': '/assets/Tours and Travels Abroad_2.png',
-    'visa-assistance': '/assets/Visa Assistance_2.png',
+    'property-care': getAssetUrl('Property Care_2.png'),
+    'quick-medical-facility': getAssetUrl('Quick Medical Facility_2.png'),
+    'provision-of-attendants': getAssetUrl('Provision Of Attendants_2.png'),
+    'routine-health-exercise': getAssetUrl('Routine Health Exercise_2.png'),
+    'house-maintenance': getAssetUrl('House Maintenance_2.png'),
+    'pensioners-assistance': getAssetUrl('Pensioners Assistance_2.png'),
+    'courier-services': getAssetUrl('Courier Services_2.png'),
+    'home-made-pickles': getAssetUrl('Home Made Pickles_2.png'),
+    'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
+    'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
+    'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
   };
 
   // SECONDARY Photo: local _1 images (on-ground field execution photos)
   const secondaryPhotos = {
-    'property-care': '/assets/Property Care_1.jpg',
-    'quick-medical-facility': '/assets/Quick Medical Facility_1.jpeg',
-    'provision-of-attendants': '/assets/Provision of Attendants_1.jpg',
-    'routine-health-exercise': '/assets/Routine Health Exercise_1.jpg',
-    'house-maintenance': '/assets/House Maintenance_1.png',
-    'pensioners-assistance': '/assets/Pensioners Assistance_1.png',
-    'courier-services': '/assets/Courier Services_1.jpg',
-    'home-made-pickles': '/assets/Home Made Pickles_1.png',
-    'recreation-and-outing': '/assets/Recreation and Outing_1.png',
-    'tours-and-travels-abroad': '/assets/Tours and Travels Abroad_1.png',
-    'visa-assistance': '/assets/Visa Assistance_1.jpg',
+    'property-care': getAssetUrl('Property Care_1.jpg'),
+    'quick-medical-facility': getAssetUrl('Quick Medical Facility_1.jpeg'),
+    'provision-of-attendants': getAssetUrl('Provision of Attendants_1.jpg'),
+    'routine-health-exercise': getAssetUrl('Routine Health Exercise_1.jpg'),
+    'house-maintenance': getAssetUrl('House Maintenance_1.png'),
+    'pensioners-assistance': getAssetUrl('Pensioners Assistance_1.png'),
+    'courier-services': getAssetUrl('Courier Services_1.jpg'),
+    'home-made-pickles': getAssetUrl('Home Made Pickles_1.png'),
+    'recreation-and-outing': getAssetUrl('Recreation and Outing_1.png'),
+    'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_1.png'),
+    'visa-assistance': getAssetUrl('Visa Assistance_1.jpg'),
   };
 
   const primaryPhoto = primaryPhotos[service.id] || service.image;
@@ -166,7 +157,7 @@ export default function ServiceDetailPage({ service, setActivePage, onOpenBookin
                 alt={`${service.title} Primary View`}
                 className="w-full h-full object-cover"
                 style={{ objectPosition: getObjectPosition(service.id) }}
-                onError={(e) => { e.target.onerror = null; e.target.src = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80'; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = service.image; }}
               />
             </div>
 
@@ -222,7 +213,7 @@ export default function ServiceDetailPage({ service, setActivePage, onOpenBookin
           </div>
 
           {/* Right Column: Compact Appointment Form */}
-          <div className="lg:col-span-5 sticky top-24">
+          <div className="lg:col-span-5 sticky top-24 z-20">
             <div className="bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/80 shadow-md space-y-4 max-w-md mx-auto">
 
               <div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Lock, Phone, Eye, EyeOff, LogIn, ShieldCheck } from 'lucide-react';
+import { Mail, Lock, Phone, ArrowRight, ShieldCheck } from 'lucide-react';
 import CountryCodePicker from './CountryCodePicker';
+import { getAssetUrl } from '../utils/assets';
 
 export default function LoginPage({ setActivePage }) {
   const [loginMethod, setLoginMethod] = useState('email'); // 'email' or 'phone'
@@ -29,10 +30,9 @@ export default function LoginPage({ setActivePage }) {
         {/* Top Header */}
         <div className="text-center space-y-2">
           <img
-            src="/assets/logo.png"
+            src={getAssetUrl('logo.png')}
             alt="NRI Connects"
             className="h-12 w-auto mx-auto object-contain"
-            onError={(e) => { e.target.onerror = null; e.target.src = "/logo.png"; }}
           />
           <h2 className="text-2xl font-extrabold text-slate-900 font-display">Welcome Back</h2>
           <p className="text-xs text-slate-500 font-medium">Access your NRI Care & Property Dashboard</p>

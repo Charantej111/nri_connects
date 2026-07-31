@@ -1,6 +1,7 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Mail, Phone, ShieldCheck, CreditCard, Lock } from 'lucide-react';
-import { CONTACT_INFO, SERVICES_CATALOG } from '../data/nriContent';
+import { Phone, Mail, MapPin, ShieldCheck, Heart, ArrowRight, ExternalLink, Lock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { SERVICES_CATALOG, CONTACT_INFO } from '../data/nriContent';
+import { getAssetUrl } from '../utils/assets';
 
 export default function Footer({ setActivePage, setLegalTab }) {
   return (
@@ -53,10 +54,9 @@ export default function Footer({ setActivePage, setLegalTab }) {
               className="flex items-center text-left focus:outline-none"
             >
               <img
-                src="/assets/logo_footer.png"
+                src={getAssetUrl('logo_footer.png')}
                 alt="NRI Connects"
                 className="h-14 w-auto object-contain transition-transform hover:scale-102"
-                onError={(e) => { e.target.onerror = null; e.target.src = "/logo.png"; }}
               />
             </button>
             <p className="text-xs sm:text-[13px] text-slate-400 leading-relaxed font-normal">

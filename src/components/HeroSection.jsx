@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { CONTACT_INFO, SERVICES_CATALOG } from '../data/nriContent';
+import { getAssetUrl } from '../utils/assets';
 
 // _2 images matched exactly to each service for the hero section
 const heroService2Images = {
-  'property-care': '/assets/Property Care_2.png',
-  'quick-medical-facility': '/assets/Quick Medical Facility_2.png',
-  'provision-of-attendants': '/assets/Provision Of Attendants_2.png',
-  'routine-health-exercise': '/assets/Routine Health Exercise_2.png',
-  'house-maintenance': '/assets/House Maintenance_2.png',
-  'pensioners-assistance': '/assets/Pensioners Assistance_2.png',
-  'courier-services': '/assets/Courier Services_2.png',
-  'home-made-pickles': '/assets/Home Made Pickles_2.png',
-  'recreation-and-outing': '/assets/Recreation and Outing_2.png',
-  'tours-and-travels-abroad': '/assets/Tours and Travels Abroad_2.png',
-  'visa-assistance': '/assets/Visa Assistance_2.png',
+  'property-care': getAssetUrl('Property Care_2.png'),
+  'quick-medical-facility': getAssetUrl('Quick Medical Facility_2.png'),
+  'provision-of-attendants': getAssetUrl('Provision Of Attendants_2.png'),
+  'routine-health-exercise': getAssetUrl('Routine Health Exercise_2.png'),
+  'house-maintenance': getAssetUrl('House Maintenance_2.png'),
+  'pensioners-assistance': getAssetUrl('Pensioners Assistance_2.png'),
+  'courier-services': getAssetUrl('Courier Services_2.png'),
+  'home-made-pickles': getAssetUrl('Home Made Pickles_2.png'),
+  'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
+  'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
+  'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
 };
 
 const FALLBACK_IMG = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80';
@@ -164,7 +165,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
         </div>
 
         {/* Soft left-edge gradient */}
-        <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
+        <div className="absolute inset-y-0 left-0 bg-transparent lg:bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
         {/* Bottom vignette */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-24 pointer-events-none" style={{ zIndex: 30 }} />
       </div>
@@ -193,7 +194,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl">
+            <p className="text-base sm:text-lg text-white md:text-slate-600 leading-relaxed font-normal max-w-xl">
               {currentSlide.desc}
             </p>
 
