@@ -72,7 +72,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
     const words = title.split(' ');
     if (words.length <= 2) {
       return (
-        <span className="relative inline-block text-slate-900">
+        <span className="relative inline-block text-white md:text-slate-900">
           {title}
           <svg className="absolute -bottom-2 left-0 w-full h-3 text-emerald-500 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
             <path d="M0,15 Q50,2 100,15" stroke="currentColor" strokeWidth="4.5" fill="none" />
@@ -85,7 +85,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
     return (
       <>
         {normalText}{' '}
-        <span className="relative inline-block text-slate-900">
+        <span className="relative inline-block text-white md:text-slate-900">
           {highlightedText}
           <svg className="absolute -bottom-2.5 left-0 w-full h-3 text-emerald-500" viewBox="0 0 100 20" preserveAspectRatio="none">
             <path d="M0,15 Q50,2 100,15" stroke="currentColor" strokeWidth="4.5" fill="none" />
@@ -189,7 +189,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15] font-display">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white md:text-slate-900 tracking-tight leading-[1.15] font-display">
               {renderHighlightedTitle(currentSlide.title)}
             </h1>
 

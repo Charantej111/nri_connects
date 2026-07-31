@@ -37,6 +37,7 @@
 - **Build Tool**: Vite 6
 - **Styling**: Tailwind CSS v3, PostCSS, Custom Keyframe Animations
 - **Icons**: Lucide React
+- **Image Optimizer**: `vite-plugin-image-optimizer`, `sharp`
 - **Utilities**: `clsx`, `tailwind-merge`
 
 ---
