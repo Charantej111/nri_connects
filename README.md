@@ -144,7 +144,7 @@ This repository includes a pre-configured `vercel.json` optimized for Vite SPAs.
 - **USA Office**: NRI Connects LLC, 100 Shoreline Highway, Suite 200, Mill Valley, CA 94941, USA
 - **Phone / WhatsApp**: +91 988 588 0017
 - **Email**: info@nriconnects.com
-- **Website**: [nriconnects.com](https://nriconnects.com)
+- **Website**: [nriconnects.com](https://nriconnects.ofzen.in/)
 
 ---
 

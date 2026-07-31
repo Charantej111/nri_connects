@@ -1,6 +1,6 @@
-# robots.txt for NRI Connects (https://nriconnects.com)
+# robots.txt for NRI Connects (https://nriconnects.ofzen.in/)
 User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://nriconnects.com/sitemap.xml
+Sitemap: https://nriconnects.ofzen.in/sitemap.xml
