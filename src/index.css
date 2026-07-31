@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FAF7F5] text-slate-800 antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-900;
+  }
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
+}
+
+/* Landing Page Smooth Blur-In Entrance */
+@keyframes landingBlur {
+  0% {
+    filter: blur(25px);
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Staggered Text Slide Entrance */
+@keyframes landingText {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Fast text crossfade during service loop cycles */
+@keyframes cycleText {
+  0% {
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Hero Slideshow: Professional Ken Burns + Crossfade System
+   ============================================================ */
+
+/* Incoming slide: fades in (0→1 over first 16% = ~0.8s) + slow Ken Burns zoom */
+@keyframes heroSlideEnter {
+  0% {
+    opacity: 0;
+    transform: scale(1.04) translate(0, 0);
+  }
+  16% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.12) translate(-1.5%, -0.8%);
+  }
+}
+
+/* Outgoing slide: fades out smoothly */
+@keyframes heroSlideExit {
+  0%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.hero-slide-enter {
+  animation: heroSlideEnter 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-slide-exit {
+  animation: heroSlideExit 1.4s ease-in-out forwards;
+  will-change: opacity;
+}
+
+/* Animation Classes */
+.animate-landing-blur {
+  animation: landingBlur 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-landing-text {
+  animation: landingText 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-cycle-text {
+  animation: cycleText 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-only {
+  animation: heroSlideEnter 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+/* Floating animations for collage images */
+@keyframes floatY1 {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+@keyframes floatY2 {
+  0%, 100% {
+    transform: translateY(0) rotate(2deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(4deg);
+  }
+}
+@keyframes floatY3 {
+  0%, 100% {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1deg);
+  }
+}
+
+.animate-float-1 {
+  animation: floatY1 6s ease-in-out infinite;
+}
+.animate-float-2 {
+  animation: floatY2 8s ease-in-out infinite;
+}
+.animate-float-3 {
+  animation: floatY3 7s ease-in-out infinite;
+}
+/* Fade In page transition keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Scroll Reveal Animations - Progressive Enhancement */
+.js-enabled .reveal-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js-enabled .reveal-fade-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
