@@ -1,0 +1,6 @@
+# robots.txt for NRI Connects (https://nriconnects.com)
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://nriconnects.com/sitemap.xml
