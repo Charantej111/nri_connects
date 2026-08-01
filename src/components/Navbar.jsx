@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, ShieldCheck, HeartHandshake, PhoneCall } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, ShieldCheck, HeartHandshake, PhoneCall } from 'lucide-react';
 import { SERVICES_CATALOG, CONTACT_INFO } from '../data/nriContent';
 import { getAssetUrl } from '../utils/assets';
 
 export default function Navbar({ activePage, setActivePage, onOpenBookingModal, onSelectService }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
     onSelectService(svc);
     setActivePage('service-detail');
     setMobileMenuOpen(false);
+    setMobileServicesOpen(false);
     window.scrollTo(0, 0);
   };
 
@@ -82,10 +84,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
 
                 {/* 2-Column Glassmorphic Dropdown Panel */}
                 <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-[540px] bg-white/95 backdrop-blur-md border border-slate-100 shadow-2xl rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50">
-                  <div className="col-span-2 pb-2 mb-2 border-b border-slate-100">
-                    <span className="text-[10px] font-extrabold text-emerald-700 tracking-widest uppercase block">Our Services</span>
-                    <span className="text-xs text-slate-500 font-normal">Empathetic care & vigilant protection for parents in India</span>
-                  </div>
+
                   {SERVICES_CATALOG.map((svc) => (
                     <button
                       key={svc.id}
@@ -157,7 +156,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
 
         {/* Mobile Nav */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1.5 mt-1 shadow-xl animate-fadeIn">
+          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-1.5 mt-1 shadow-xl animate-fadeIn max-h-[85vh] overflow-y-auto custom-scrollbar">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -166,7 +165,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
                   setMobileMenuOpen(false);
                   window.scrollTo(0, 0);
                 }}
-                className={`w-full text-left px-4 py-2 rounded-xl text-xs font-bold transition-all ${activePage === item.id
+                className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${activePage === item.id
                   ? 'bg-emerald-700 text-white'
                   : 'text-slate-700 hover:bg-slate-50'
                   }`}
@@ -175,18 +174,56 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
               </button>
             ))}
 
-            {/* Mobile Services Links List */}
-            <div className="border-y border-slate-100 py-2">
-              <span className="block text-[10px] font-extrabold text-slate-400 px-4 uppercase tracking-wider mb-1">Our Services</span>
-              {SERVICES_CATALOG.map((svc) => (
-                <button
-                  key={svc.id}
-                  onClick={() => handleServiceClick(svc)}
-                  className="w-full text-left px-6 py-1.5 text-xs font-bold text-slate-600 hover:text-emerald-700 transition-colors"
-                >
-                  • {svc.title}
-                </button>
-              ))}
+            {/* Collapsible Mobile Services Dropdown (Desktop-Styled Panel) */}
+            <div className="border-y border-slate-100 py-1">
+              <button
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className={`w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${activePage === 'services' || activePage === 'service-detail'
+                  ? 'text-emerald-700 bg-emerald-50'
+                  : 'text-slate-700 hover:bg-slate-50'
+                  }`}
+              >
+                <span className="flex items-center space-x-2">
+                  <span>Services</span>
+                  <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-full border border-emerald-200/50">
+                    {SERVICES_CATALOG.length}
+                  </span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180 text-emerald-700' : ''}`} />
+              </button>
+
+              {/* Desktop-Styled Mobile Dropdown Panel */}
+              {mobileServicesOpen && (
+                <div className="px-4 space-y-3 animate-fadeIn">
+
+                  {/* Service Items Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
+                    {SERVICES_CATALOG.map((svc) => (
+                      <button
+                        key={svc.id}
+                        onClick={() => handleServiceClick(svc)}
+                        className="text-left px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-emerald-50 hover:text-emerald-700 transition-colors border border-slate-100 shadow-xs flex items-center justify-between"
+                      >
+                        <span>{svc.title}</span>
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* View All Footer Option */}
+                  <button
+                    onClick={() => {
+                      setActivePage('services');
+                      setMobileMenuOpen(false);
+                      setMobileServicesOpen(false);
+                      window.scrollTo(0, 0);
+                    }}
+                    className="w-full text-center py-2 text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-100/50 hover:bg-emerald-100 rounded-xl transition-colors block border border-emerald-200/50"
+                  >
+                    View All Services Catalog →
+                  </button>
+                </div>
+              )}
             </div>
 
             {secondaryNavItems.map((item) => (
@@ -197,7 +234,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
                   setMobileMenuOpen(false);
                   window.scrollTo(0, 0);
                 }}
-                className={`w-full text-left px-4 py-2 rounded-xl text-xs font-bold transition-all ${activePage === item.id
+                className={`w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${activePage === item.id
                   ? 'bg-emerald-700 text-white'
                   : 'text-slate-700 hover:bg-slate-50'
                   }`}
@@ -209,13 +246,13 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
             <div className="pt-2.5 border-t border-slate-100 space-y-2">
               <button
                 onClick={() => { setMobileMenuOpen(false); setActivePage('login'); }}
-                className="w-full text-center py-2 border border-slate-200 text-slate-700 rounded-xl text-xs font-bold"
+                className="w-full text-center py-2.5 border border-slate-200 text-slate-700 rounded-xl text-xs font-bold"
               >
                 Login
               </button>
               <button
                 onClick={() => { setMobileMenuOpen(false); setActivePage('signup'); }}
-                className="w-full text-center py-2 bg-emerald-100 text-emerald-800 rounded-xl text-xs font-bold"
+                className="w-full text-center py-2.5 bg-emerald-100 text-emerald-800 rounded-xl text-xs font-bold"
               >
                 Sign Up
               </button>

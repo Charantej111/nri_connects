@@ -1,79 +1,63 @@
 import React from 'react';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { NEWS_ARTICLES } from '../data/nriContent';
 import CommunityBanner from './CommunityBanner';
 
 export default function NewsSection({ setActivePage, onOpenBookingModal }) {
   return (
-    <div className="py-24 sm:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 reveal-fade-up">
+    <div className="py-24 sm:py-32 bg-[#FAF7F5] font-sans">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 reveal-fade-up">
 
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full">
-            NRI INSIGHTS & UPDATES
-          </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+        {/* Header - Centered as per Reference Image */}
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-display tracking-tight">
             Latest News & Articles
           </h1>
-          <p className="text-sm text-slate-600 font-normal">
-            Stay informed with expert advice on managing parent healthcare, legal land documentation, emergency response, and international express logistics in India.
+          <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+            Curated elder care protocols, property protection insights, legal updates, and diaspora news for NRIs worldwide.
           </p>
         </div>
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Stacked Newsletter Cards List - Matching Reference UI */}
+        <div className="space-y-6">
           {NEWS_ARTICLES.map((article) => (
-            <div
+            <a
               key={article.id}
-              className="bg-[#FAF7F5] rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between hover:-translate-y-1"
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 group block text-left relative overflow-hidden"
             >
-              <div>
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <span className="absolute top-4 left-4 bg-emerald-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                    {article.category}
-                  </span>
-                </div>
+              {/* Meta Top Line: DATE & CATEGORY */}
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <span className="text-xs sm:text-sm font-bold text-slate-500 tracking-wider">
+                  {article.date}
+                </span>
 
-                <div className="p-6 space-y-3">
-                  <div className="flex items-center space-x-3 text-xs text-slate-400 font-medium">
-                    <span className="flex items-center space-x-1">
-                      <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>{article.date}</span>
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center space-x-1">
-                      <Clock className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>{article.readTime}</span>
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
-                    {article.snippet}
-                  </p>
-                </div>
+                <span className="bg-emerald-50 text-emerald-700 text-[10px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-wider border border-emerald-100">
+                  {article.category}
+                </span>
               </div>
 
-              <div className="p-6 pt-0">
-                <button
-                  onClick={onOpenBookingModal}
-                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-emerald-600 group-hover:underline"
-                >
-                  <span>Read Full Article</span>
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+              {/* Article Title */}
+              <h3 className="text-lg sm:text-2xl font-extrabold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug font-display mb-3">
+                {article.title}
+              </h3>
 
-            </div>
+              {/* Excerpt Snippet */}
+              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal mb-6">
+                {article.snippet}
+              </p>
+
+              {/* Bottom Source & External Redirection Link */}
+              <div className="flex items-center justify-between pt-4 border-t border-slate-100 text-xs font-bold">
+                <div className="flex items-center space-x-1.5 text-emerald-700 group-hover:text-emerald-800">
+                  <span>Read full news on {article.source || 'Original News Source'}</span>
+                  <ExternalLink className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+                <span className="text-slate-400 text-[11px] font-semibold">{article.readTime}</span>
+              </div>
+            </a>
           ))}
         </div>
 
@@ -91,3 +75,4 @@ export default function NewsSection({ setActivePage, onOpenBookingModal }) {
     </div>
   );
 }
+

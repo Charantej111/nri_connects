@@ -12,6 +12,14 @@
   }
 }
 
+.font-cursive {
+  font-family: 'Caveat', cursive;
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
 .glass-nav {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);

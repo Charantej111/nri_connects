@@ -9,7 +9,7 @@ export const CONTACT_INFO = {
   whatsapp: "+919885880017",
   email: "info@nriconnects.com",
   emergencyPhone: "+91 988 588 0017",
-  headquarters: "Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033, India",
+  headquarters: "NRI Connects, Mallampet Road, Bachupally, Hyderabad, Telangana 500090, India",
   usaOffice: "NRI Connects LLC, 100 Shoreline Highway, Suite 200, Mill Valley, CA 94941, USA",
   workingHours: "24/7 Operations & Emergency Support",
   tagline: "Caring for What Matters, Anywhere.",
@@ -520,29 +520,57 @@ export const GALLERY_IMAGES = [
 export const NEWS_ARTICLES = [
   {
     id: 1,
-    title: "How NRIs Can Protect Vacant Land & Villas in India From Encroachment",
-    category: "Property Care",
-    date: "July 24, 2026",
+    title: "How NRIs Can Manage and Protect Their Properties in India",
+    category: "PROPERTY CARE",
+    date: "July 2026",
     readTime: "5 min read",
-    snippet: "Discover essential physical inspection protocols, boundary wall maintenance, and title deed audits every non-resident Indian should implement.",
+    snippet: "Physical boundary inspection protocols, geotagged video audits, legal Power of Attorney (PoA) registration, and municipal tax clearing guidelines for property owned by non-resident Indians.",
+    source: "Financial Express",
+    url: "https://www.financialexpress.com/nri/",
     image: getAssetUrl('Property Care_1.jpg')
   },
   {
     id: 2,
-    title: "Step-by-Step Guide to Filing Digital Life Certificates (Jeevan Pramaan) for NRI Parents",
-    category: "Elder Care",
-    date: "July 18, 2026",
+    title: "Doorstep Digital Life Certificate & Health Care Coverage for NRI Parents",
+    category: "PENSION & ELDER CARE",
+    date: "June 2026",
     readTime: "4 min read",
-    snippet: "Learn how doorstep biometric verification ensures seamless pension credits into Indian bank accounts without long queue hassles.",
+    snippet: "Latest RBI and government updates on digital life certificate submissions, doorstep biometric verification, and health insurance coverage for aging parents in India.",
+    source: "Google News",
+    url: "https://news.google.com/search?q=NRI+parent+care+India",
     image: getAssetUrl('Pensioners Assistance_1.png')
   },
   {
     id: 3,
-    title: "Top Medical Precautions & Emergency Protocols for Senior Citizens Living Alone in India",
-    category: "Healthcare",
-    date: "July 10, 2026",
+    title: "Community News & Diaspora Guidance for Indian Families Living Overseas",
+    category: "COMMUNITY & HEALTH",
+    date: "May 2026",
     readTime: "6 min read",
-    snippet: "Key recommendations for 24/7 SOS helpline setup, hospital bed pre-registration, and regular health vitals tracking across timezones.",
+    snippet: "Comprehensive reports on family support systems, NRI community initiatives, medical emergency coordination, and travel advice for diaspora families in North America & Europe.",
+    source: "NRI Pulse",
+    url: "https://nripulse.com/",
     image: getAssetUrl('Quick Medical Facility_1.jpeg')
+  },
+  {
+    id: 4,
+    title: "FEMA Compliance, Property Transfers & Tax Updates for Non-Resident Indians",
+    category: "FINANCE & TAXATION",
+    date: "February 2026",
+    readTime: "5 min read",
+    snippet: "Financial Express expert analysis on TDS deductions on property sales, repatriation of funds, NRE/NRO banking guidelines, and estate planning for NRIs.",
+    source: "Financial Express",
+    url: "https://www.financialexpress.com/money/",
+    image: getAssetUrl('Property Care_2.png')
+  },
+  {
+    id: 5,
+    title: "Latest Trends in Real Estate & Senior Elder Care in India",
+    category: "TRENDS & INSIGHTS",
+    date: "November 2025",
+    readTime: "4 min read",
+    snippet: "Explore current Google News articles on remote property management tools, senior wellness check-ins, and emergency response infrastructure across tier-1 Indian cities.",
+    source: "Google News",
+    url: "https://news.google.com/search?q=NRI+property+management+India",
+    image: getAssetUrl('Routine Health Exercise_1.jpg')
   }
 ];
