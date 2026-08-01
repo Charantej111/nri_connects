@@ -167,62 +167,60 @@ export default function Footer({ setActivePage, setLegalTab }) {
               </li>
             </ul>
 
+            {/* Social Links placed directly below Legal */}
+            <div className="pt-2">
+              <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Connect With Us</span>
+              <div className="flex items-center space-x-3">
+                <a
+                  href={CONTACT_INFO.socials.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="w-8 h-8 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white transition-all flex items-center justify-center text-slate-400 shadow-md border border-slate-800/60"
+                >
+                  <Facebook className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={CONTACT_INFO.socials.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="w-8 h-8 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white transition-all flex items-center justify-center text-slate-400 shadow-md border border-slate-800/60"
+                >
+                  <Instagram className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href={CONTACT_INFO.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-8 h-8 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white transition-all flex items-center justify-center text-slate-400 shadow-md border border-slate-800/60"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
 
-        {/* Footer Bottom: Socials, Copyright */}
-        <div className="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row items-center justify-between text-xs gap-4">
-
-          {/* Copyrights & Signature */}
-          <div className="text-center md:text-left space-y-1">
-            <p className="font-semibold text-slate-300">
-              © {new Date().getFullYear()} {CONTACT_INFO.companyLegalName}. All rights reserved.
-            </p>
-            <p className="text-[11px] text-slate-400 font-normal">
-              Made with ❤️ by{' '}
-              <a
-                href="https://ofzen.in/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-white hover:underline hover:text-emerald-400 font-bold transition-colors"
-              >
-                Ofzen
-              </a>
-            </p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex items-center space-x-3">
+        {/* Footer Bottom: Copyright & Credits */}
+        <div className="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs gap-3">
+          <p className="font-semibold text-slate-300 text-center sm:text-left">
+            © {new Date().getFullYear()} {CONTACT_INFO.companyLegalName}. All rights reserved.
+          </p>
+          <p className="text-[11px] text-slate-400 font-normal text-center sm:text-right">
+            Made with ❤️ by{' '}
             <a
-              href={CONTACT_INFO.socials.facebook}
+              href="https://ofzen.in/"
               target="_blank"
               rel="noreferrer"
-              aria-label="Facebook"
-              className="w-8 h-8 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white transition-all flex items-center justify-center text-slate-400 shadow-md border border-slate-800/60"
+              className="text-white hover:underline hover:text-emerald-400 font-bold transition-colors"
             >
-              <Facebook className="w-3.5 h-3.5" />
+              Ofzen
             </a>
-            <a
-              href={CONTACT_INFO.socials.instagram}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="w-8 h-8 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white transition-all flex items-center justify-center text-slate-400 shadow-md border border-slate-800/60"
-            >
-              <Instagram className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href={CONTACT_INFO.socials.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="w-8 h-8 rounded-full bg-slate-900 hover:bg-emerald-600 hover:text-white transition-all flex items-center justify-center text-slate-400 shadow-md border border-slate-800/60"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
+          </p>
         </div>
 
       </div>

@@ -103,7 +103,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
       : ''; // slideCounter=0, initial phase done → keep at full opacity
 
   return (
-    <section className="relative pt-28 sm:pt-36 pb-36 bg-[#FAF7F5] overflow-hidden font-sans">
+    <section className="relative pt-28 sm:pt-36 pb-28 sm:pb-36 bg-[#FAF7F5] overflow-hidden font-sans">
 
       {/* Premium subtle dotted pattern with dual Purple & Emerald logo dots */}
       <div
@@ -123,18 +123,15 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
       </div>
 
       {/*
-        ─── BACKGROUND IMAGE SLIDESHOW ─────────────────────────────────────
+        ─── BACKGROUND IMAGE SLIDESHOW (Full-bleed Mobile & Split Desktop) ──
         Two-layer Ken Burns + crossfade:
           • Layer A (Exit): the PREVIOUS slide fades out over 1.4 s
           • Layer B (Enter): the CURRENT slide fades in while slowly zooming
             from scale(1) → scale(1.1) over 5 s (Ken Burns)
-
-        The active layer uses key="enter-{slideCounter}" so React remounts
-        it fresh on every slide change, restarting the CSS animation at 0%.
         ──────────────────────────────────────────────────────────────────── */}
       <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[50%] z-0 pointer-events-none overflow-hidden">
 
-        {/* Layer A — Exiting slide (z-10, fades out via heroSlideExit) */}
+        {/* Layer A — Exiting slide */}
         {slideCounter > 0 && prevIdx !== null && (
           <div
             key={`exit-${slideCounter}`}
@@ -144,13 +141,13 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
             <img
               src={slides[prevIdx].image}
               alt="previous"
-              className="w-full h-full object-cover object-right"
+              className="w-full h-full object-cover object-[70%_center] lg:object-right"
               onError={(e) => { e.target.onerror = null; e.target.src = FALLBACK_IMG; }}
             />
           </div>
         )}
 
-        {/* Layer B — Active slide (z-20, Ken Burns enter or initial blur-in) */}
+        {/* Layer B — Active slide */}
         <div
           key={slideCounter === 0 ? 'initial-slot' : `enter-${slideCounter}`}
           className={`absolute inset-0 ${isInitialPhase ? 'animate-landing-blur' : 'hero-slide-enter'}`}
@@ -159,15 +156,15 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
           <img
             src={currentSlide.image}
             alt={currentSlide.title}
-            className="w-full h-full object-cover object-right"
+            className="w-full h-full object-cover object-[70%_center] lg:object-right"
             onError={(e) => { e.target.onerror = null; e.target.src = FALLBACK_IMG; }}
           />
         </div>
 
-        {/* Soft left-edge gradient */}
+        {/* Soft left-edge gradient on desktop */}
         <div className="absolute inset-y-0 left-0 bg-transparent lg:bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
         {/* Mobile Dark Contrast Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-slate-950/30 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-slate-950/40 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
         {/* Bottom vignette */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-24 pointer-events-none" style={{ zIndex: 30 }} />
       </div>
@@ -175,7 +172,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
       {/* ─── CONTENT ─────────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-8 sm:pb-12">
 
           {/* Left column text — remounts with every slideCounter change */}
           <div
@@ -227,68 +224,68 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
           </div>
 
-          {/* Right column spacer (image sits in absolute background panel) */}
+          {/* Right column spacer (image sits in absolute background panel on desktop) */}
           <div className="hidden lg:block lg:col-span-6 h-[400px]" />
 
         </div>
 
         {/* ─── CONTACT OVERLAY CARDS ───────────────────────────────────────── */}
-        <div className="max-w-6xl mx-auto mt-8 relative z-20">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto mt-4 sm:mt-8 relative z-20">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-8 shadow-xl border border-slate-100 grid grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6">
 
             {/* Call Us */}
-            <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-emerald-50/70 transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <Phone className="w-6 h-6" />
+            <a
+              href={`tel:${CONTACT_INFO.phone}`}
+              className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-2 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-emerald-50/70 transition-colors group"
+            >
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform mb-1.5 md:mb-0 md:mr-4">
+                <Phone className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
-              <div className="space-y-1">
-                <h4 className="text-base font-extrabold text-slate-900 font-display">Call us</h4>
-                <p className="text-xs font-semibold text-slate-500">{CONTACT_INFO.phone}</p>
-                <a
-                  href={`tel:${CONTACT_INFO.phone}`}
-                  className="inline-flex items-center space-x-1 text-xs font-bold text-emerald-600 hover:underline pt-1"
-                >
+              <div className="space-y-0.5 md:space-y-1 min-w-0 w-full">
+                <h4 className="text-xs sm:text-base font-extrabold text-slate-900 font-display">Call us</h4>
+                <p className="text-[10px] sm:text-xs font-semibold text-slate-500 truncate block">{CONTACT_INFO.phone}</p>
+                <span className="hidden md:inline-flex items-center space-x-1 text-xs font-bold text-emerald-600 group-hover:underline pt-1">
                   <span>Make us a call</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
 
             {/* Email Us */}
-            <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-emerald-50/70 transition-colors group border-y md:border-y-0 md:border-x border-slate-100">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <Mail className="w-6 h-6" />
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-2 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-emerald-50/70 transition-colors group border-x md:border-y-0 md:border-x border-slate-100"
+            >
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform mb-1.5 md:mb-0 md:mr-4">
+                <Mail className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
-              <div className="space-y-1">
-                <h4 className="text-base font-extrabold text-slate-900 font-display">Email us</h4>
-                <p className="text-xs font-semibold text-slate-500">{CONTACT_INFO.email}</p>
-                <a
-                  href={`mailto:${CONTACT_INFO.email}`}
-                  className="inline-flex items-center space-x-1 text-xs font-bold text-emerald-600 hover:underline pt-1"
-                >
+              <div className="space-y-0.5 md:space-y-1 min-w-0 w-full">
+                <h4 className="text-xs sm:text-base font-extrabold text-slate-900 font-display">Email us</h4>
+                <p className="text-[10px] sm:text-xs font-semibold text-slate-500 truncate block">{CONTACT_INFO.email}</p>
+                <span className="hidden md:inline-flex items-center space-x-1 text-xs font-bold text-emerald-600 group-hover:underline pt-1">
                   <span>Send us an email</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
 
             {/* Visit Us */}
-            <div className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-teal-50/70 transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
-                <MapPin className="w-6 h-6" />
+            <button
+              onClick={() => { setActivePage('contact'); window.scrollTo(0, 0); }}
+              className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left p-2 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-teal-50/70 transition-colors group"
+            >
+              <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform mb-1.5 md:mb-0 md:mr-4">
+                <MapPin className="w-4 h-4 sm:w-6 sm:h-6" />
               </div>
-              <div className="space-y-1">
-                <h4 className="text-base font-extrabold text-slate-900 font-display">Visit us</h4>
-                <p className="text-xs font-semibold text-slate-500 leading-snug">{CONTACT_INFO.headquarters}</p>
-                <button
-                  onClick={() => { setActivePage('contact'); window.scrollTo(0, 0); }}
-                  className="inline-flex items-center space-x-1 text-xs font-bold text-teal-600 hover:underline pt-1"
-                >
+              <div className="space-y-0.5 md:space-y-1 min-w-0 w-full">
+                <h4 className="text-xs sm:text-base font-extrabold text-slate-900 font-display">Visit us</h4>
+                <p className="text-[10px] sm:text-xs font-semibold text-slate-500 leading-snug truncate block">{CONTACT_INFO.headquarters}</p>
+                <span className="hidden md:inline-flex items-center space-x-1 text-xs font-bold text-teal-600 group-hover:underline pt-1">
                   <span>View our locations</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </span>
               </div>
-            </div>
+            </button>
 
           </div>
         </div>
