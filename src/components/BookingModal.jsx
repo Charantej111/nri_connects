@@ -31,8 +31,8 @@ export default function BookingModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
-      <div className="bg-white w-full max-w-xl rounded-3xl shadow-2xl border border-slate-100 overflow-hidden relative my-8">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6 animate-fadeIn">
+      <div className="bg-white w-full max-w-xl rounded-t-[2rem] sm:rounded-3xl shadow-2xl border border-slate-100 overflow-hidden relative my-0 sm:my-8 max-h-[92vh] overflow-y-auto">
 
         {/* Modal Header */}
         <div className="bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-6 sm:p-8 relative">

@@ -97,20 +97,23 @@ export default function ServicesSection({ onSelectService, setActivePage, onOpen
             Select any service below to view full details, photo documentation, and book an appointment.
           </p>
 
-          {/* Category Filter Pills */}
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${activeCategory === cat.id
-                    ? 'bg-emerald-600 text-white shadow-sm'
-                    : 'bg-[#F8FAFC] text-slate-700 hover:bg-emerald-50 hover:text-emerald-700'
-                  }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+          {/* Category Filter Pills (Touch Swipeable on Mobile) */}
+          <div className="pt-3 flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar pb-2 px-4 sm:px-0 -mx-4 sm:mx-0 flex-nowrap sm:flex-wrap">
+            {categories.map((cat) => {
+              const isSelected = activeCategory === cat.id;
+              const catBtnStyle = isSelected
+                ? 'bg-emerald-600 text-white shadow-sm'
+                : 'bg-[#F8FAFC] text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200/60';
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap flex-shrink-0 ${catBtnStyle}`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 

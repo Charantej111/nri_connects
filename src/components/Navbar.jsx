@@ -38,7 +38,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans">
-      <nav className={`transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-1 border-b border-slate-100' : 'bg-white py-2 border-b border-slate-100'}`}>
+      <nav className={`transition-all duration-300 border-b border-slate-100 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-1' : 'bg-white py-2'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
 

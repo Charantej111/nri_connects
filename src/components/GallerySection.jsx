@@ -95,18 +95,21 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
 
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 transform active:scale-95 ${activeCategory === cat
-                    ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20 scale-[1.02]'
-                    : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200/80 hover:border-emerald-200'
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const isCatActive = activeCategory === cat;
+              const filterBtnStyle = isCatActive
+                ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200/80 hover:border-emerald-200';
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 transform active:scale-95 ${filterBtnStyle}`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
           </div>
         </div>
 

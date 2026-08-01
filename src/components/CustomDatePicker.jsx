@@ -79,17 +79,19 @@ export default function CustomDatePicker({ value, onChange, className = "" }) {
     const isSelected = value && formatDateString(new Date(year, month, d)) === value;
     const isToday = formatDateString(new Date(year, month, d)) === formatDateString(new Date());
 
+    let dayStyles = 'text-slate-700 hover:bg-emerald-50/70';
+    if (isSelected) {
+      dayStyles = 'bg-emerald-600 text-white shadow-md';
+    } else if (isToday) {
+      dayStyles = 'border border-emerald-600 text-emerald-700 font-extrabold';
+    }
+
     daysGrid.push(
       <button
         key={`day-${d}`}
         type="button"
         onClick={() => handleSelectDay(d)}
-        className={`w-8 h-8 rounded-full text-xs font-bold transition-colors flex items-center justify-center ${isSelected
-          ? 'bg-emerald-600 text-white shadow-md'
-          : isToday
-            ? 'border border-emerald-600 text-emerald-700 font-extrabold'
-            : 'text-slate-700 hover:bg-emerald-50/70'
-          }`}
+        className={`w-8 h-8 rounded-full text-xs font-bold transition-colors flex items-center justify-center ${dayStyles}`}
       >
         {d}
       </button>

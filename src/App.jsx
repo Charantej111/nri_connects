@@ -18,6 +18,7 @@ import LegalPages from './components/LegalPages';
 import FaqSection from './components/FaqSection';
 import { SERVICES_CATALOG } from './data/nriContent';
 import { ArrowUp, MessageCircle } from 'lucide-react';
+import MobileBottomNav from './components/MobileBottomNav';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home'); 
@@ -70,7 +71,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF7F5] font-sans antialiased text-slate-800 selection:bg-emerald-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FAF7F5] font-sans antialiased text-slate-800 selection:bg-emerald-600 selection:text-white pb-16 lg:pb-0">
       
       {/* Sticky Header with Services Dropdown */}
       <Navbar 
@@ -196,14 +197,21 @@ export default function App() {
       {/* Footer */}
       <Footer setActivePage={setActivePage} setLegalTab={setLegalTab} />
 
+      {/* App-like Mobile Sticky Bottom Navigation */}
+      <MobileBottomNav
+        activePage={activePage}
+        setActivePage={setActivePage}
+        onOpenBookingModal={() => setBookingModalOpen(true)}
+      />
+
       {/* Quick Booking & Consultation Modal */}
       <BookingModal 
         isOpen={bookingModalOpen}
         onClose={() => setBookingModalOpen(false)}
       />
 
-      {/* STICKY FLOAT ACTIONS IN BOTTOM RIGHT */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+      {/* STICKY FLOAT ACTIONS IN BOTTOM RIGHT (Desktop view) */}
+      <div className="hidden lg:flex fixed bottom-6 right-6 z-50 flex-col space-y-3">
         
         {/* WhatsApp Sticky Float Chat Button */}
         <a

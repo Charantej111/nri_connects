@@ -38,6 +38,15 @@
   border-radius: 4px;
 }
 
+/* Hide scrollbar for touch carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Landing Page Smooth Blur-In Entrance */
 @keyframes landingBlur {
   0% {

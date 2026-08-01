@@ -72,7 +72,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
     const words = title.split(' ');
     if (words.length <= 2) {
       return (
-        <span className="relative inline-block text-white md:text-slate-900">
+        <span className="relative inline-block text-white lg:text-slate-900">
           {title}
           <svg className="absolute -bottom-2 left-0 w-full h-3 text-emerald-500 -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
             <path d="M0,15 Q50,2 100,15" stroke="currentColor" strokeWidth="4.5" fill="none" />
@@ -85,7 +85,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
     return (
       <>
         {normalText}{' '}
-        <span className="relative inline-block text-white md:text-slate-900">
+        <span className="relative inline-block text-white lg:text-slate-900">
           {highlightedText}
           <svg className="absolute -bottom-2.5 left-0 w-full h-3 text-emerald-500" viewBox="0 0 100 20" preserveAspectRatio="none">
             <path d="M0,15 Q50,2 100,15" stroke="currentColor" strokeWidth="4.5" fill="none" />
@@ -166,6 +166,8 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
         {/* Soft left-edge gradient */}
         <div className="absolute inset-y-0 left-0 bg-transparent lg:bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
+        {/* Mobile Dark Contrast Vignette Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-slate-950/30 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
         {/* Bottom vignette */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-24 pointer-events-none" style={{ zIndex: 30 }} />
       </div>
@@ -189,17 +191,17 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white md:text-slate-900 tracking-tight leading-[1.15] font-display">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white lg:text-slate-900 tracking-tight leading-[1.15] font-display">
               {renderHighlightedTitle(currentSlide.title)}
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-white md:text-slate-600 leading-relaxed font-normal max-w-xl">
+            <p className="text-base sm:text-lg text-slate-100 lg:text-slate-600 leading-relaxed font-normal max-w-xl">
               {currentSlide.desc}
             </p>
 
-            {/* CTA */}
-            <div className="pt-1 flex flex-wrap items-center gap-4">
+            {/* CTA & Slide Dots */}
+            <div className="pt-1 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <button
                 onClick={() => { setActivePage(currentSlide.targetPage); window.scrollTo(0, 0); }}
                 className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center space-x-2"
@@ -207,6 +209,20 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
                 <span>{currentSlide.actionText}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+
+              {/* Touch Slide Dots */}
+              <div className="flex items-center space-x-1.5 pt-1 sm:pt-0">
+                {slides.map((s, idx) => (
+                  <button
+                    key={s.id}
+                    onClick={() => setSlideCounter(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      activeIdx === idx ? 'w-6 bg-emerald-500' : 'w-2 bg-white/60 lg:bg-slate-300 hover:bg-slate-400'
+                    }`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
           </div>

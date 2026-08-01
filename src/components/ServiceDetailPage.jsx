@@ -107,20 +107,22 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
               <button
                 disabled={!prevService}
                 onClick={() => navigateToService(prevService)}
-                className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${prevService
-                  ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
-                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
-                  }`}
+                className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${
+                  prevService
+                    ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
+                    : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                }`}
               >
                 <span>&larr; Prev Service</span>
               </button>
               <button
                 disabled={!nextService}
                 onClick={() => navigateToService(nextService)}
-                className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${nextService
-                  ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
-                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
-                  }`}
+                className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${
+                  nextService
+                    ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
+                    : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                }`}
               >
                 <span>Next Service &rarr;</span>
               </button>
