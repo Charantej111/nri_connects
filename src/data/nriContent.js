@@ -3,6 +3,8 @@
 import { getAssetUrl } from '../utils/assets';
 
 export const CONTACT_INFO = {
+  companyName: "NRI Connects",
+  companyLegalName: "Nova Resources of India Connects Private Limited",
   phone: "+91 988 588 0017",
   whatsapp: "+919885880017",
   email: "info@nriconnects.com",

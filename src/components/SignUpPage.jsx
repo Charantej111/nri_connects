@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Mail, Phone, Lock, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { User, UserPlus, Mail, Phone, Lock, Globe, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { CITIES_SERVICED } from '../data/nriContent';
 import CountryCodePicker from './CountryCodePicker';
 import CustomSelect from './CustomSelect';

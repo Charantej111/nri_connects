@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, Phone, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Mail, Lock, Phone, ArrowRight, ShieldCheck, Eye, EyeOff, LogIn } from 'lucide-react';
 import CountryCodePicker from './CountryCodePicker';
 import { getAssetUrl } from '../utils/assets';
 
