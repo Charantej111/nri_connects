@@ -142,7 +142,7 @@ export default function ContactSection({ setActivePage }) {
               <div className="bg-emerald-50 text-emerald-900 p-8 rounded-[2rem] border border-emerald-200 text-center space-y-3 animate-fadeIn my-auto">
                 <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
                 <h4 className="font-extrabold text-lg">Thank You! Your message has been received.</h4>
-                <p className="text-xs text-emerald-700">Our advisory team will reach out to you via WhatsApp / Email shortly.</p>
+                <p className="text-s text-emerald-700">Our advisory team will reach out to you via WhatsApp / Email shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -150,26 +150,26 @@ export default function ContactSection({ setActivePage }) {
                 {/* Row 1: Name and Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="block text-xs font-bold text-slate-800 tracking-wide">Name *</label>
+                    <label className="block text-s font-bold text-slate-800 tracking-wide">Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Rahul Sharma"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-5 py-4 rounded-2xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-white"
+                      className="w-full px-5 py-4 rounded-2xl border border-slate-200 text-s font-semibold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-xs font-bold text-slate-800 tracking-wide">Email Address *</label>
+                    <label className="block text-s font-bold text-slate-800 tracking-wide">Email Address *</label>
                     <input
                       type="email"
                       required
                       placeholder="rahul@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-5 py-4 rounded-2xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-white"
+                      className="w-full px-5 py-4 rounded-2xl border border-slate-200 text-s font-semibold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-white"
                     />
                   </div>
                 </div>
@@ -177,7 +177,7 @@ export default function ContactSection({ setActivePage }) {
                 {/* Row 2: Phone and Service Interest */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="block text-xs font-bold text-slate-800 tracking-wide">Phone Number *</label>
+                    <label className="block text-s font-bold text-slate-800 tracking-wide">Phone Number *</label>
                     <div className="relative flex border border-slate-200 rounded-2xl focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500 bg-white transition-all">
                       <CountryCodePicker
                         selected={formData.countryCode}
@@ -189,13 +189,13 @@ export default function ContactSection({ setActivePage }) {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-5 py-4 text-xs font-semibold focus:outline-none bg-transparent rounded-r-2xl"
+                        className="w-full px-5 py-4 text-s font-semibold focus:outline-none bg-transparent rounded-r-2xl"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-xs font-bold text-slate-800 tracking-wide">Interested Service *</label>
+                    <label className="block text-s font-bold text-slate-800 tracking-wide">Interested Service *</label>
                     <CustomSelect
                       value={formData.serviceInterest}
                       onChange={(val) => setFormData({ ...formData, serviceInterest: val })}
@@ -207,14 +207,14 @@ export default function ContactSection({ setActivePage }) {
 
                 {/* Row 3: Message Textarea */}
                 <div className="space-y-2">
-                  <label className="block text-xs font-bold text-slate-800 tracking-wide">Your Message / Inquiry *</label>
+                  <label className="block text-s font-bold text-slate-800 tracking-wide">Your Message / Inquiry *</label>
                   <textarea
                     rows={4}
                     required
                     placeholder="Tell us how we can support your family in India..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-white"
+                    className="w-full px-5 py-4 rounded-2xl border border-slate-200 text-s font-semibold focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-white"
                   />
                 </div>
 
@@ -222,7 +222,7 @@ export default function ContactSection({ setActivePage }) {
                 <div className="pt-2 text-left">
                   <button
                     type="submit"
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold text-xs shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5"
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold text-s shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5"
                   >
                     Send message
                   </button>

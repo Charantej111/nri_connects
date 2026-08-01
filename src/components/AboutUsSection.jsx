@@ -82,7 +82,7 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
                   <Heart className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">24/7 Nursing Staff</h4>
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">24/7 Medical service</h4>
                   <p className="text-[11px] text-slate-500 font-medium leading-relaxed">Accredited medical partners ready to coordinate hospital care.</p>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
                   <Shield className="w-6 h-6" />
                 </div>
                 <div className="space-y-1">
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Resident Care</h4>
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Property Care</h4>
                   <p className="text-[11px] text-slate-500 font-medium leading-relaxed">Dedicated caregivers offering regular companion assistance.</p>
                 </div>
               </div>

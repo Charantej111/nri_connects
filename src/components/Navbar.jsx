@@ -61,8 +61,8 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
                   key={item.id}
                   onClick={() => { setActivePage(item.id); window.scrollTo(0, 0); }}
                   className={`px-3.5 py-1.5 rounded-full text-s font-bold transition-all ${activePage === item.id
-                    ? 'text-emerald-700 bg-emerald-50'
-                    : 'text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/50'
+                    ? 'text-emerald-700 '
+                    : 'text-slate-700 hover:text-emerald-700'
                     }`}
                 >
                   {item.label}
@@ -89,7 +89,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
                     <button
                       key={svc.id}
                       onClick={() => handleServiceClick(svc)}
-                      className="text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+                      className="text-left px-3 py-2 rounded-xl text-s font-bold text-slate-700 hover: hover:text-emerald-700 transition-colors"
                     >
                       {svc.title}
                     </button>
@@ -102,8 +102,8 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
                   key={item.id}
                   onClick={() => { setActivePage(item.id); window.scrollTo(0, 0); }}
                   className={`px-3.5 py-1.5 rounded-full text-s font-bold transition-all ${activePage === item.id
-                    ? 'text-emerald-700 bg-emerald-50'
-                    : 'text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/50'
+                    ? 'text-emerald-700 '
+                    : 'text-slate-700 hover:text-emerald-700'
                     }`}
                 >
                   {item.label}
@@ -122,7 +122,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
 
               <button
                 onClick={() => { setActivePage('signup'); window.scrollTo(0, 0); }}
-                className="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-full text-xs font-bold transition-colors whitespace-nowrap"
+                className=" text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-full text-xs font-bold transition-colors whitespace-nowrap"
               >
                 Sign Up
               </button>
@@ -179,7 +179,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 className={`w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${activePage === 'services' || activePage === 'service-detail'
-                  ? 'text-emerald-700 bg-emerald-50'
+                  ? 'text-emerald-700 '
                   : 'text-slate-700 hover:bg-slate-50'
                   }`}
               >
@@ -202,7 +202,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
                       <button
                         key={svc.id}
                         onClick={() => handleServiceClick(svc)}
-                        className="text-left px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-white hover:bg-emerald-50 hover:text-emerald-700 transition-colors border border-slate-100 shadow-xs flex items-center justify-between"
+                        className="text-left px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 bg-white hover: hover:text-emerald-700 transition-colors border border-slate-100 shadow-xs flex items-center justify-between"
                       >
                         <span>{svc.title}</span>
                         <ChevronRight className="w-3.5 h-3.5 text-slate-400" />

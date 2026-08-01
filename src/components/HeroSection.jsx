@@ -16,15 +16,17 @@ const heroService2Images = {
   'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
   'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
   'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
+  'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
+  'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
 };
 
 const FALLBACK_IMG = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80';
 
 export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
-  // Build slide deck: all 11 services with matched _2 images (no brand-hero slide)
+  // Build slide deck: all services with matched _2 images
   const slides = [
-    ...SERVICES_CATALOG.slice(0, 11).map(service => ({
+    ...SERVICES_CATALOG.map(service => ({
       id: service.id,
       badge: service.badge.toUpperCase(),
       title: service.title,
@@ -164,7 +166,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
         {/* Soft left-edge gradient on desktop */}
         <div className="absolute inset-y-0 left-0 bg-transparent lg:bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
         {/* Mobile Dark Contrast Vignette Overlay — upper part made lighter for higher image opacity */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/10 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/60 to-slate-950/10 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
         {/* Bottom vignette */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-24 pointer-events-none" style={{ zIndex: 30 }} />
       </div>

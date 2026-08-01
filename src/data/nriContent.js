@@ -80,7 +80,7 @@ export const SERVICES_CATALOG = [
     priceRange: "Instant Support",
     rating: 5.0,
     reviewsCount: 489,
-    shortDesc: "Immediate medical response, 24/7 ambulance coordination, emergency hospital admission, doctor visits at home, and real-time medical updates to NRIs abroad.",
+    shortDesc: "Immediate medical response, emergency hospital admission, doctor visits at home, and real-time medical updates to NRIs abroad.",
     image: getAssetUrl('Quick Medical Facility_2.png'),
     features: [
       "Guaranteed Emergency SOS Rapid Response",
@@ -322,6 +322,58 @@ export const SERVICES_CATALOG = [
       "Application Filing & Biometric Appointment Slot",
       "Parent Mock Interview Preparation",
       "Passport Collection Post Visa Approval"
+    ]
+  },
+  {
+    id: "false-ceiling-installation-and-design",
+    title: "False Ceiling Installation and Design",
+    category: "property",
+    badge: "Interiors",
+    priceRange: "On-demand Quote",
+    rating: 4.9,
+    reviewsCount: 184,
+    shortDesc: "Customized false ceiling design, Gypsum board installation, ambient LED strip lighting, acoustic insulation, and complete home interior ceiling solutions in India.",
+    image: getAssetUrl('False Ceiling Installation_1.png.jpeg'),
+    features: [
+      "Turnkey Gypsum & POP False Ceiling Architectural Design",
+      "Cove & Indirect Ambient LED Strip Light Integration",
+      "Acoustic Soundproofing & Thermal Insulation",
+      "High-Quality Fire & Moisture-Resistant Ceiling Boards",
+      "Dust-Free Professional Execution & Cleanup",
+      "Detailed Cost Breakdown & Material Warranty Certificate"
+    ],
+    detailedDescription: "Transform your residential property's interiors with state-of-the-art false ceiling designs. Whether updating your parents' home or renovating an investment property in India, our interior experts handle everything from modern architectural blueprints and electrical wiring to LED light installation and dust-free finishing.",
+    workflow: [
+      "In-Home Measurement & Design Consultation",
+      "3D Design Mockup & Transparent Cost Estimate",
+      "Precision Gypsum Board & Electrical Installation",
+      "Final Quality Inspection & Geotagged Completion Report"
+    ]
+  },
+  {
+    id: "commercial-land-leasing",
+    title: "Commercial Land Leasing",
+    category: "property",
+    badge: "Land Leasing",
+    priceRange: "Custom Lease Terms",
+    rating: 4.9,
+    reviewsCount: 226,
+    shortDesc: "Monetize vacant commercial plots and industrial land in India with verified corporate tenants, legally registered lease agreements, and hassle-free rent collection.",
+    image: getAssetUrl('Commercial Land Leasing_1.png'),
+    features: [
+      "MNC & Corporate Tenant Prospecting & Background Vetting",
+      "Legally Binding Commercial Lease Agreement Drafting & Registration",
+      "Local Municipal Zoning Laws & N.O.C Compliance Support",
+      "Automated Monthly Rental Remittance to NRE/NRO Accounts",
+      "Regular Boundary Audits & Encroachment Protection",
+      "Annual Rent Escalation & Property Tax Management"
+    ],
+    detailedDescription: "Unlock recurring passive income from your commercial plots, retail sites, or industrial land in India. NRI Connects connects your land assets with reputable corporate tenants, logistics hubs, retail brands, or solar operators while managing legal documentation, tenant screening, and direct rental remittance.",
+    workflow: [
+      "Commercial Site Valuation & Zoning Assessment",
+      "Corporate Tenant Marketing & Background Audit",
+      "Lease Term Negotiation & Sub-Registrar Filing",
+      "Automated Monthly Rent Deposit & Site Inspections"
     ]
   }
 ];

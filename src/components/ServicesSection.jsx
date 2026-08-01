@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {
   Building2, HeartPulse, UserCheck, Activity, Wrench, FileCheck,
-  PackageCheck, Utensils, Compass, Plane, FileText, ArrowRight
+  PackageCheck, Utensils, Compass, Plane, FileText, ArrowRight,
+  Layers, Landmark
 } from 'lucide-react';
 import { SERVICES_CATALOG } from '../data/nriContent';
 import { getAssetUrl } from '../utils/assets';
@@ -19,6 +20,8 @@ const service2Photos = {
   'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
   'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
   'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
+  'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
+  'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
 };
 
 // Shift the focus of specific service images slightly downward to fit better
@@ -32,6 +35,8 @@ const getObjectPosition = (id) => {
     'home-made-pickles': 'center 30%',
     'recreation-and-outing': 'center 15%',
     'tours-and-travels-abroad': 'center 30%',
+    'false-ceiling-installation-and-design': 'center 30%',
+    'commercial-land-leasing': 'center 30%',
   };
   return positions[id] || 'center 50%';
 };
@@ -64,6 +69,8 @@ export default function ServicesSection({ onSelectService, setActivePage, onOpen
       case 'recreation-and-outing': return <Compass className="w-5 h-5 text-[#EF531C]" />;
       case 'tours-and-travels-abroad': return <Plane className="w-5 h-5 text-[#EF531C]" />;
       case 'visa-assistance': return <FileText className="w-5 h-5 text-[#EF531C]" />;
+      case 'false-ceiling-installation-and-design': return <Layers className="w-5 h-5 text-[#EF531C]" />;
+      case 'commercial-land-leasing': return <Landmark className="w-5 h-5 text-[#EF531C]" />;
       default: return <Building2 className="w-5 h-5 text-[#EF531C]" />;
     }
   };

@@ -83,7 +83,7 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <div className="py-16 sm:py-24 bg-[#FAF7F5] font-sans">
+    <div className="py-24 bg-[#FAF7F5] font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Category Pills Header Row */}
