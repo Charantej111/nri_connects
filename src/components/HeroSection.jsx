@@ -103,7 +103,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
       : ''; // slideCounter=0, initial phase done → keep at full opacity
 
   return (
-    <section className="relative pt-28 sm:pt-36 pb-28 sm:pb-36 bg-[#FAF7F5] overflow-hidden font-sans">
+    <section className="relative pt-48 sm:pt-36 pb-20 sm:pb-36 bg-[#FAF7F5] overflow-hidden font-sans">
 
       {/* Premium subtle dotted pattern with dual Purple & Emerald logo dots */}
       <div
@@ -163,21 +163,21 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
         {/* Soft left-edge gradient on desktop */}
         <div className="absolute inset-y-0 left-0 bg-transparent lg:bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
-        {/* Mobile Dark Contrast Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/65 to-slate-950/40 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
+        {/* Mobile Dark Contrast Vignette Overlay — upper part made lighter for higher image opacity */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/45 to-slate-950/10 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
         {/* Bottom vignette */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-24 pointer-events-none" style={{ zIndex: 30 }} />
       </div>
 
       {/* ─── CONTENT ─────────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto mt-20 md:mt-0 px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-8 sm:pb-12">
 
           {/* Left column text — remounts with every slideCounter change */}
           <div
             key={slideCounter}
-            className={`lg:col-span-6 space-y-6 py-4 ${textAnimClass}`}
+            className={`lg:col-span-6 space-y-6 pt-10 pb-6 sm:py-4 text-center lg:text-left ${textAnimClass}`}
           >
 
             {/* Eyebrow Badge */}
@@ -193,12 +193,12 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-100 lg:text-slate-600 leading-relaxed font-normal max-w-xl">
+            <p className="text-base sm:text-lg text-slate-100 lg:text-slate-600 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
               {currentSlide.desc}
             </p>
 
             {/* CTA & Slide Dots */}
-            <div className="pt-1 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
               <button
                 onClick={() => { setActivePage(currentSlide.targetPage); window.scrollTo(0, 0); }}
                 className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center space-x-2"
@@ -208,14 +208,13 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
               </button>
 
               {/* Touch Slide Dots */}
-              <div className="flex items-center space-x-1.5 pt-1 sm:pt-0">
+              <div className="flex items-center justify-center space-x-1.5 pt-1 sm:pt-0">
                 {slides.map((s, idx) => (
                   <button
                     key={s.id}
                     onClick={() => setSlideCounter(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      activeIdx === idx ? 'w-6 bg-emerald-500' : 'w-2 bg-white/60 lg:bg-slate-300 hover:bg-slate-400'
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${activeIdx === idx ? 'w-6 bg-emerald-500' : 'w-2 bg-white/60 lg:bg-slate-300 hover:bg-slate-400'
+                      }`}
                     aria-label={`Slide ${idx + 1}`}
                   />
                 ))}
@@ -229,8 +228,8 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
         </div>
 
-        {/* ─── CONTACT OVERLAY CARDS ───────────────────────────────────────── */}
-        <div className="max-w-6xl mx-auto mt-4 sm:mt-8 relative z-20">
+        {/* ─── CONTACT OVERLAY CARDS (Hidden on mobile) ─────────────────────── */}
+        <div className="max-w-6xl mx-auto mt-4 sm:mt-8 relative z-20 hidden md:block">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-8 shadow-xl border border-slate-100 grid grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6">
 
             {/* Call Us */}
