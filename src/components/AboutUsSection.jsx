@@ -16,7 +16,7 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
           <div className="lg:col-span-6 relative h-[500px] sm:h-[600px] flex items-center justify-center">
 
             {/* Top-Left Image: Couple Laughing */}
-            <div className="absolute top-8 left-4 w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden shadow-lg border-4 border-white transition-all duration-700 z-10 animate-float-1 hover:scale-105 hover:z-30 cursor-pointer">
+            <div className="absolute top-8 left-4 w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden shadow-lg border-4 border-white transition-all duration-700 z-20 animate-float-1 hover:scale-105 hover:z-30 cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80"
                 alt="Active Seniors Laughing"
@@ -25,7 +25,7 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
             </div>
 
             {/* Center-Right Large Image: Elderly Couple Hugging */}
-            <div className="absolute right-4 top-16 w-60 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-xl border-4 border-white transition-all duration-700 z-20 animate-float-2 hover:scale-105 hover:z-30 cursor-pointer">
+            <div className="absolute right-4 top-16 w-60 h-80 sm:w-72 sm:h-96 rounded-3xl overflow-hidden shadow-xl border-4 border-white transition-all duration-700 z-10 animate-float-2 hover:scale-105 hover:z-30 cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=600&q=80"
                 alt="Seniors Caring Relationship"
@@ -34,7 +34,7 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
             </div>
 
             {/* Bottom-Left Image: Happy Elderly Lady with flowers */}
-            <div className="absolute bottom-6 left-8 w-44 h-48 sm:w-52 sm:h-56 rounded-3xl overflow-hidden shadow-lg border-4 border-white transition-all duration-700 z-10 animate-float-3 hover:scale-105 hover:z-30 cursor-pointer">
+            <div className="absolute bottom-6 left-8 w-44 h-48 sm:w-52 sm:h-56 rounded-3xl overflow-hidden shadow-lg border-4 border-white transition-all duration-700 z-20 animate-float-3 hover:scale-105 hover:z-30 cursor-pointer">
               <img
                 src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80"
                 alt="Elderly Lady Smiling"

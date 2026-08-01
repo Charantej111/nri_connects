@@ -131,7 +131,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
           • Layer B (Enter): the CURRENT slide fades in while slowly zooming
             from scale(1) → scale(1.1) over 5 s (Ken Burns)
         ──────────────────────────────────────────────────────────────────── */}
-      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[50%] z-0 pointer-events-none overflow-hidden">
+      <div className="absolute right-0 top-0 bottom-1 w-full lg:w-[50%] z-0 pointer-events-none overflow-hidden">
 
         {/* Layer A — Exiting slide */}
         {slideCounter > 0 && prevIdx !== null && (
@@ -152,7 +152,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
         {/* Layer B — Active slide */}
         <div
           key={slideCounter === 0 ? 'initial-slot' : `enter-${slideCounter}`}
-          className={`absolute inset-0 ${isInitialPhase ? 'animate-landing-blur' : 'hero-slide-enter'}`}
+          className={`absolute inset-0 ${isInitialPhase && slideCounter === 0 ? 'animate-landing-blur' : 'hero-slide-enter'}`}
           style={{ zIndex: 20 }}
         >
           <img
@@ -165,10 +165,10 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
         {/* Soft left-edge gradient on desktop */}
         <div className="absolute inset-y-0 left-0 bg-transparent lg:bg-gradient-to-r from-[#FAF7F5] via-[#FAF7F5]/85 to-transparent w-32 pointer-events-none" style={{ zIndex: 30 }} />
-        {/* Mobile Dark Contrast Vignette Overlay — upper part made lighter for higher image opacity */}
+        {/* Mobile Dark Contrast Vignette Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/60 to-slate-950/10 lg:hidden pointer-events-none" style={{ zIndex: 25 }} />
         {/* Bottom vignette */}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-24 pointer-events-none" style={{ zIndex: 30 }} />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#FAF7F5] to-transparent h-48 pointer-events-none" style={{ zIndex: 30 }} />
       </div>
 
       {/* ─── CONTENT ─────────────────────────────────────────────────────── */}
@@ -176,10 +176,10 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-8 sm:pb-12">
 
-          {/* Left column text — remounts with every slideCounter change */}
+          {/* Left column text — remounts with every slideCounter change (fixed min-height prevents height jumps) */}
           <div
             key={slideCounter}
-            className={`lg:col-span-6 space-y-6 pt-10 pb-6 sm:py-4 text-center lg:text-left ${textAnimClass}`}
+            className={`lg:col-span-6 space-y-6 pt-6 pb-6 sm:py-4 min-h-[380px] sm:min-h-[420px] flex flex-col justify-center text-center lg:text-left ${textAnimClass}`}
           >
 
             {/* Eyebrow Badge */}
