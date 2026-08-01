@@ -87,7 +87,7 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Category Pills Header Row */}
-        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200/70 pb-6 reveal-fade-up">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200/70 pb-6  ">
           <div className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-emerald-800 bg-emerald-100/60 px-3.5 py-1.5 rounded-full border border-emerald-200/50 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
             <span>Our Gallery</span>
@@ -121,7 +121,7 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
             <div className="md:col-span-6 flex flex-col justify-between space-y-6">
 
               {/* Animated Text Block (Requested Content) */}
-              <div className="pt-2 pr-2 space-y-3 reveal-fade-up">
+              <div className="pt-2 pr-2 space-y-3  ">
                 <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-display font-medium text-slate-800 leading-[1.35] tracking-tight">
                   At <span className="font-semibold text-emerald-800">NRI Connects</span>, we care for what matters most:{' '}
                   <span className="font-serif-luxury italic text-emerald-800 font-semibold">your loved ones</span>.
@@ -140,14 +140,14 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
                 {/* Photo 1: Far-Left Tall Portrait */}
                 <div
                   onClick={() => setSelectedImg(galleryItems[0])}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[360px] sm:h-[400px] reveal-fade-up"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[360px] sm:h-[400px]  "
                 >
                   <img
                     src={galleryItems[0].image}
                     alt={galleryItems[0].title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                       {galleryItems[0].category}
                     </span>
@@ -165,14 +165,14 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
                   {/* Photo 2 (Top) */}
                   <div
                     onClick={() => setSelectedImg(galleryItems[1])}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[170px] sm:h-[190px] reveal-fade-up"
+                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[170px] sm:h-[190px]  "
                   >
                     <img
                       src={galleryItems[1].image}
                       alt={galleryItems[1].title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                       <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                         {galleryItems[1].category}
                       </span>
@@ -188,14 +188,14 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
                   {/* Photo 3 (Bottom) */}
                   <div
                     onClick={() => setSelectedImg(galleryItems[2])}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[170px] sm:h-[190px] reveal-fade-up"
+                    className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[170px] sm:h-[190px]  "
                   >
                     <img
                       src={galleryItems[2].image}
                       alt={galleryItems[2].title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
                       <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                         {galleryItems[2].category}
                       </span>
@@ -220,14 +220,14 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
               {/* Photo 4: Tall Center-Right Portrait (Aligned top with text block) */}
               <div
                 onClick={() => setSelectedImg(galleryItems[3])}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[420px] sm:h-[480px] reveal-fade-up"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[420px] sm:h-[480px]  "
               >
                 <img
                   src={galleryItems[3].image}
                   alt={galleryItems[3].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {galleryItems[3].category}
                   </span>
@@ -243,14 +243,14 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
               {/* Photo 5: Tall Far-Right Portrait (Offset top or aligned top) */}
               <div
                 onClick={() => setSelectedImg(galleryItems[4])}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[360px] sm:h-[400px] sm:mt-6 reveal-fade-up"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[360px] sm:h-[400px] sm:mt-6  "
               >
                 <img
                   src={galleryItems[4].image}
                   alt={galleryItems[4].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {galleryItems[4].category}
                   </span>
@@ -266,14 +266,14 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
               {/* Photo 6: Bottom Right Landscape (Spans across bottom right under Photo 4 & 5) */}
               <div
                 onClick={() => setSelectedImg(galleryItems[5])}
-                className="sm:col-span-2 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[180px] sm:h-[210px] reveal-fade-up"
+                className="sm:col-span-2 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-emerald-950/15 hover:-translate-y-1.5 transition-all duration-500 group cursor-pointer border border-slate-200/70 relative h-[180px] sm:h-[210px]  "
               >
                 <img
                   src={galleryItems[5].image}
                   alt={galleryItems[5].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {galleryItems[5].category}
                   </span>
@@ -306,7 +306,7 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cubic-bezier(0.16,1,0.3,1)"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {item.category}
                   </span>
