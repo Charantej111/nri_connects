@@ -25,7 +25,7 @@ export default function Footer({ setActivePage, setLegalTab, onSelectService }) 
             </button>
 
             <div className="space-y-1.5">
-              <span className="block text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
+              <span className="block text-[16px] font-bold text-emerald-400 uppercase tracking-wider">
                 {CONTACT_INFO.companyLegalName}
               </span>
               <p className="text-xs text-slate-400 leading-relaxed font-normal">
