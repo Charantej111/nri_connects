@@ -1,50 +1,18 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ShieldCheck, Heart, ArrowRight, ExternalLink, Lock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { SERVICES_CATALOG, CONTACT_INFO } from '../data/nriContent';
 import { getAssetUrl } from '../utils/assets';
 
-export default function Footer({ setActivePage, setLegalTab }) {
+export default function Footer({ setActivePage, setLegalTab, onSelectService }) {
   return (
-    <footer className="bg-[#0B0F19] text-slate-400 pt-16 sm:pt-20 pb-10 sm:pb-12 border-t border-slate-800/80 font-sans tracking-wide">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14">
-
-        {/* Footer Top: Advisory CTA & Trust Badges */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 pb-10 border-b border-slate-800/80 items-center">
-
-          <div className="lg:col-span-7 space-y-2.5">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
-              Ready to secure peace of mind for parents ?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-xl">
-              Connect with a personal care manager at <strong className="text-slate-200 font-semibold">{CONTACT_INFO.companyLegalName}</strong>. We provide round-the-clock human coordination for medical, property, legal, and personal errands.
-            </p>
-          </div>
-
-          <div className="lg:col-span-5 flex flex-col sm:flex-row items-center gap-3.5 w-full justify-end">
-            <button
-              onClick={() => { setActivePage('contact'); window.scrollTo(0, 0); }}
-              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 rounded-xl font-bold text-xs shadow-md transition-all text-center flex items-center justify-center space-x-2 transform active:scale-95"
-            >
-              <Mail className="w-4 h-4" />
-              <span>Contact Advisory Desk</span>
-            </button>
-
-            <a
-              href={`tel:${CONTACT_INFO.phone}`}
-              className="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white px-7 py-3.5 rounded-xl font-bold text-xs transition-all text-center flex items-center justify-center space-x-2 transform active:scale-95"
-            >
-              <Phone className="w-4 h-4 text-emerald-400" />
-              <span>Call Helpline</span>
-            </a>
-          </div>
-
-        </div>
+    <footer className="bg-[#0B0F19] text-slate-400 pt-12 sm:pt-16 pb-10 sm:pb-12 border-t border-slate-800/80 font-sans tracking-wide">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Footer Middle: Grid of Links & Corporate Vitals */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10">
 
           {/* Logo & Corporate Vitals */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-3 space-y-4">
             <button
               onClick={() => { setActivePage('home'); window.scrollTo(0, 0); }}
               className="flex items-center text-left focus:outline-none"
@@ -112,18 +80,22 @@ export default function Footer({ setActivePage, setLegalTab }) {
             </ul>
           </div>
 
-          {/* Primary Services Column */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest pb-1 border-b border-slate-800/80">Services</h4>
-            <ul className="space-y-2.5 text-xs">
-              {SERVICES_CATALOG.slice(0, 5).map((svc) => (
+          {/* Primary Services Column - Displays All 14 Services in 2 columns */}
+          <div className="lg:col-span-4 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest pb-1 border-b border-slate-800/80">Our Services</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-2 text-xs">
+              {SERVICES_CATALOG.map((svc) => (
                 <li key={svc.id}>
                   <button
-                    onClick={() => { setActivePage('services'); window.scrollTo(0, 0); }}
-                    className="hover:text-white transition-colors text-left flex items-center space-x-1.5 group"
+                    onClick={() => {
+                      if (onSelectService) onSelectService(svc);
+                      setActivePage('service-detail');
+                      window.scrollTo(0, 0);
+                    }}
+                    className="hover:text-white transition-colors text-left flex items-start space-x-1.5 group py-0.5"
                   >
-                    <span className="w-1 h-1 rounded-full bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>{svc.title}</span>
+                    <span className="w-1 h-1 rounded-full bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1.5" />
+                    <span className="leading-tight">{svc.title}</span>
                   </button>
                 </li>
               ))}

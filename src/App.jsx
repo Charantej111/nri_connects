@@ -195,7 +195,11 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer setActivePage={setActivePage} setLegalTab={setLegalTab} />
+      <Footer 
+        setActivePage={setActivePage} 
+        setLegalTab={setLegalTab} 
+        onSelectService={(svc) => setSelectedService(svc)}
+      />
 
       {/* App-like Mobile Sticky Bottom Navigation */}
       <MobileBottomNav
