@@ -50,7 +50,7 @@ export default function Navbar({ activePage, setActivePage, onOpenBookingModal, 
               <img
                 src={getAssetUrl('logo.png')}
                 alt="NRI Connects Logo"
-                className="h-16 sm:h-20 lg:h-[56px] w-auto max-w-[280px] object-contain transition-transform hover:scale-105"
+                className="h-16 sm:h-20 lg:h-[56px] w-auto max-w-[280px] object-contain transition-transform"
               />
             </button>
 

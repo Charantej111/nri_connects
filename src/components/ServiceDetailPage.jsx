@@ -111,26 +111,33 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
 
             {/* Quick Switcher Between Services */}
             <div className="flex items-center space-x-2">
-              <button
-                disabled={!prevService}
-                onClick={() => navigateToService(prevService)}
-                className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${prevService
+              {(() => {
+                const prevStyle = prevService
                   ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
-                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
-                  }`}
-              >
-                <span>&larr; Prev Service</span>
-              </button>
-              <button
-                disabled={!nextService}
-                onClick={() => navigateToService(nextService)}
-                className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${nextService
+                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed';
+                const nextStyle = nextService
                   ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
-                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
-                  }`}
-              >
-                <span>Next Service &rarr;</span>
-              </button>
+                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed';
+
+                return (
+                  <>
+                    <button
+                      disabled={!prevService}
+                      onClick={() => navigateToService(prevService)}
+                      className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${prevStyle}`}
+                    >
+                      <span>&larr; Prev Service</span>
+                    </button>
+                    <button
+                      disabled={!nextService}
+                      onClick={() => navigateToService(nextService)}
+                      className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${nextStyle}`}
+                    >
+                      <span>Next Service &rarr;</span>
+                    </button>
+                  </>
+                );
+              })()}
             </div>
           </div>
 
