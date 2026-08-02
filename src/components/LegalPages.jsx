@@ -5,47 +5,32 @@ import { CONTACT_INFO } from '../data/nriContent';
 export default function LegalPages({ defaultTab = 'privacy' }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
+  const tabs = [
+    { id: 'privacy', label: 'Privacy Policy', icon: Shield },
+    { id: 'terms', label: 'Terms & Conditions', icon: FileText },
+    { id: 'disclaimer', label: 'Legal Disclaimer', icon: AlertTriangle },
+  ];
+
   return (
     <div className="py-28 bg-[#FAF7F5] font-sans">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         {/* Navigation Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 border-b border-slate-200 pb-4">
-          <button
-            onClick={() => setActiveTab('privacy')}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center space-x-2 ${
-              activeTab === 'privacy'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'bg-white text-slate-600 hover:bg-emerald-50'
-            }`}
-          >
-            <Shield className="w-4 h-4" />
-            <span>Privacy Policy</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('terms')}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center space-x-2 ${
-              activeTab === 'terms'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'bg-white text-slate-600 hover:bg-emerald-50'
-            }`}
-          >
-            <FileText className="w-4 h-4" />
-            <span>Terms & Conditions</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab('disclaimer')}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center space-x-2 ${
-              activeTab === 'disclaimer'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'bg-white text-slate-600 hover:bg-emerald-50'
-            }`}
-          >
-            <AlertTriangle className="w-4 h-4" />
-            <span>Legal Disclaimer</span>
-          </button>
+          {tabs.map(({ id, label, icon: Icon }) => (
+            <button
+              key={id}
+              onClick={() => setActiveTab(id)}
+              className={
+                activeTab === id
+                  ? 'px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center space-x-2 bg-emerald-600 text-white shadow-md'
+                  : 'px-5 py-2.5 rounded-full text-xs font-bold transition-all flex items-center space-x-2 bg-white text-slate-600 hover:bg-emerald-50'
+              }
+            >
+              <Icon className="w-4 h-4" />
+              <span>{label}</span>
+            </button>
+          ))}
         </div>
 
         {/* Card Content */}
