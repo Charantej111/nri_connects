@@ -241,7 +241,7 @@ export default function ContactSection({ setActivePage }) {
               className="w-full h-full border-none"
               allowFullScreen=""
               loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
+              referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
         </div>
