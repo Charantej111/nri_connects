@@ -375,66 +375,36 @@ export const SERVICES_CATALOG = [
       "Lease Term Negotiation & Sub-Registrar Filing",
       "Automated Monthly Rent Deposit & Site Inspections"
     ]
+  },
+  {
+    id: "site-preparation-and-grading",
+    title: "Site Preparation and Grading",
+    category: "property",
+    badge: "Site Prep",
+    priceRange: "On-demand Quote",
+    rating: 4.9,
+    reviewsCount: 195,
+    shortDesc: "Professional land clearing, leveling, earthwork grading, excavation, soil compaction, and site readiness solutions for construction & plot development in India.",
+    image: getAssetUrl('Site preparation and grading_2.png'),
+    features: [
+      "Land Clearing, Debris Removal & Tree Stump Excavation",
+      "Precision Bulldozer & Excavator Earthwork Grading",
+      "Plot Leveling, Topsoil Stripping & Slope Stabilization",
+      "Soil Compaction, Testing & Sub-grade Preparation",
+      "Stormwater Drainage Channeling & Erosion Control",
+      "Geotagged Progress Photos & On-site Supervisor Inspections"
+    ],
+    detailedDescription: "Prepare your raw plot, residential site, or commercial layout for construction or investment readiness. NRI Connects provides end-to-end site preparation and land grading services in India, utilizing heavy machinery (JCB, excavators, compactors) to clear brush, level terrain, establish proper drainage, and prevent soil erosion while keeping you informed with detailed digital site reports.",
+    workflow: [
+      "Site Survey & Topographical Assessment",
+      "Debris Clearing & Vegetation Removal",
+      "Earthwork Heavy Excavation & Precision Grading",
+      "Soil Compaction, Quality Inspection & Video Report Handover"
+    ]
   }
 ];
 
-export const MEMBERSHIP_PACKAGES = [
-  {
-    id: "essential",
-    name: "Essential Care",
-    tagline: "Ideal for basic home maintenance & seasonal support",
-    monthlyPrice: 79,
-    annualPrice: 790,
-    popular: false,
-    badge: "Starter",
-    features: [
-      "1 Monthly Physical Property Inspection",
-      "24/7 Medical Emergency Helpline Access",
-      "1 House Maintenance Service (Plumbing/Electrical)",
-      "Standard HD Photo Reports",
-      "Email & WhatsApp Support",
-      "10% Discount on Courier Services"
-    ]
-  },
-  {
-    id: "silver-parent",
-    name: "Silver Parent Care",
-    tagline: "Our most popular comprehensive elder health & home plan",
-    monthlyPrice: 149,
-    annualPrice: 1490,
-    popular: true,
-    badge: "Most Popular",
-    features: [
-      "2 Monthly Physical Property Inspections",
-      "Priority 24/7 Medical Emergency SOS & Ambulance",
-      "Bi-Weekly Health Vitals Check (BP/Sugar at Home)",
-      "Unlimited House Repairs & Maintenance Dispatch",
-      "Dedicated Personal Account Manager in India",
-      "Free Pensioner Jeevan Pramaan Doorstep Filing",
-      "2 Senior Local Recreation Outings per Year",
-      "20% Discount on Express International Courier"
-    ]
-  },
-  {
-    id: "gold-concierge",
-    name: "Gold NRI Concierge",
-    tagline: "VIP full-spectrum care for parents & multi-property assets",
-    monthlyPrice: 279,
-    annualPrice: 2790,
-    popular: false,
-    badge: "VIP Complete",
-    features: [
-      "Weekly Property & Land Inspection Audits",
-      "24/7 VIP Emergency Medical & Hospital Bed Booking",
-      "Weekly Home Health Visit by Registered Nurse",
-      "Dedicated Full-Time/Part-Time Caregiver Allocation",
-      "Complete Legal, Tax & Bank Documentation Management",
-      "Free Express Courier (Up to 10kg/year)",
-      "Unlimited Senior Outings & Travel Escort Services",
-      "Complimentary Homemade Pickles & Delicacies Gift Box"
-    ]
-  }
-];
+
 
 export const TESTIMONIALS = [
   {

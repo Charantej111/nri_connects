@@ -18,6 +18,7 @@ const heroService2Images = {
   'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
   'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
   'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
+  'site-preparation-and-grading': getAssetUrl('Site preparation and grading_2.png'),
 };
 
 const FALLBACK_IMG = 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80';

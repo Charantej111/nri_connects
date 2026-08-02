@@ -20,6 +20,7 @@ const getObjectPosition = (id) => {
     'home-made-pickles': 'center 30%',
     'recreation-and-outing': 'center 15%',
     'tours-and-travels-abroad': 'center 15%',
+    'site-preparation-and-grading': 'center 50%',
   };
   return positions[id] || 'center center';
 };
@@ -69,6 +70,7 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
     'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
     'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
     'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
+    'site-preparation-and-grading': getAssetUrl('Site preparation and grading_2.png'),
   };
 
   // SECONDARY Photo: local _1 images (on-ground field execution photos)
@@ -86,6 +88,7 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
     'visa-assistance': getAssetUrl('Visa Assistance_1.jpg'),
     'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_1.png.jpeg'),
     'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_1.png'),
+    'site-preparation-and-grading': getAssetUrl('Site preparation and grading_1.png'),
   };
 
   const primaryPhoto = primaryPhotos[service.id] || service.image;
@@ -112,8 +115,8 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
                 disabled={!prevService}
                 onClick={() => navigateToService(prevService)}
                 className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${prevService
-                    ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
-                    : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                  ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
+                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
                   }`}
               >
                 <span>&larr; Prev Service</span>
@@ -122,8 +125,8 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
                 disabled={!nextService}
                 onClick={() => navigateToService(nextService)}
                 className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full border text-xs font-bold transition-all shadow-sm ${nextService
-                    ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
-                    : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                  ? 'bg-white border-slate-200 text-slate-800 hover:text-emerald-700 hover:border-emerald-700/30'
+                  : 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
                   }`}
               >
                 <span>Next Service &rarr;</span>

@@ -58,6 +58,12 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
       title: "In-Home Repairs & Plumbing Checks",
       category: "Property",
       image: getAssetUrl('House Maintenance_1.png')
+    },
+    {
+      id: 'site-preparation',
+      title: "Site Preparation & Land Grading Earthwork",
+      category: "Property",
+      image: getAssetUrl('Site preparation and grading_1.png')
     }
   ];
 

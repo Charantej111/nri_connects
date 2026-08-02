@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Building2, HeartPulse, UserCheck, Activity, Wrench, FileCheck,
   PackageCheck, Utensils, Compass, Plane, FileText, ArrowRight,
-  Layers, Landmark
+  Layers, Landmark, HardHat
 } from 'lucide-react';
 import { SERVICES_CATALOG } from '../data/nriContent';
 import { getAssetUrl } from '../utils/assets';
@@ -22,6 +22,7 @@ const service2Photos = {
   'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
   'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
   'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
+  'site-preparation-and-grading': getAssetUrl('Site preparation and grading_2.png'),
 };
 
 // Shift the focus of specific service images slightly downward to fit better
@@ -37,6 +38,7 @@ const getObjectPosition = (id) => {
     'tours-and-travels-abroad': 'center 30%',
     'false-ceiling-installation-and-design': 'center 30%',
     'commercial-land-leasing': 'center 30%',
+    'site-preparation-and-grading': 'center 30%',
   };
   return positions[id] || 'center 50%';
 };
@@ -71,6 +73,7 @@ export default function ServicesSection({ onSelectService, setActivePage, onOpen
       case 'visa-assistance': return <FileText className="w-5 h-5 text-[#EF531C]" />;
       case 'false-ceiling-installation-and-design': return <Layers className="w-5 h-5 text-[#EF531C]" />;
       case 'commercial-land-leasing': return <Landmark className="w-5 h-5 text-[#EF531C]" />;
+      case 'site-preparation-and-grading': return <HardHat className="w-5 h-5 text-[#EF531C]" />;
       default: return <Building2 className="w-5 h-5 text-[#EF531C]" />;
     }
   };
