@@ -8,15 +8,15 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
   const [selectedImg, setSelectedImg] = useState(null);
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Healthcare', 'Property', 'Elder Care', 'Documentation', 'Logistics'];
+  const categories = ['All', 'Healthcare', 'Property', 'Documentation', 'Logistics'];
 
   const galleryItems = [
-    {
-      id: 'attendants',
-      title: "Senior Attendant & Daily Companionship",
-      category: "Elder Care",
-      image: getAssetUrl('Provision of Attendants_1.jpg')
-    },
+    // {
+    //   id: 'attendants',
+    //   title: "Senior Attendant & Daily Companionship",
+    //   category: "Elder Care",
+    //   image: getAssetUrl('Provision of Attendants_1.jpg')
+    // },
     {
       id: 'property',
       title: "Geotagged Land & Boundary Audit",
@@ -35,12 +35,12 @@ export default function GallerySection({ setActivePage, onOpenBookingModal }) {
       category: "Healthcare",
       image: getAssetUrl('Quick Medical Facility_1.jpeg')
     },
-    {
-      id: 'outing',
-      title: "Guided Senior Pilgrimage Outing",
-      category: "Elder Care",
-      image: getAssetUrl('Recreation and Outing_1.png')
-    },
+    // {
+    //   id: 'outing',
+    //   title: "Guided Senior Pilgrimage Outing",
+    //   category: "Elder Care",
+    //   image: getAssetUrl('Recreation and Outing_1.png')
+    // },
     {
       id: 'pension',
       title: "Doorstep Jeevan Pramaan Filing",

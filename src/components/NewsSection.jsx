@@ -9,14 +9,14 @@ export default function NewsSection({ setActivePage, onOpenBookingModal }) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 reveal-fade-up">
 
         {/* Header - Centered as per Reference Image */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
+        {/* <div className="text-center max-w-2xl mx-auto space-y-3">
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-display tracking-tight">
             Latest News & Articles
           </h1>
           <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
             Curated elder care protocols, property protection insights, legal updates, and diaspora news for NRIs worldwide.
           </p>
-        </div>
+        </div> */}
 
         {/* Stacked Newsletter Cards List - Matching Reference UI */}
         <div className="space-y-6">
@@ -62,14 +62,14 @@ export default function NewsSection({ setActivePage, onOpenBookingModal }) {
         </div>
 
         {/* Webflow Leaf-Pattern CTA Banner */}
-        <CommunityBanner
+        {/* <CommunityBanner
           title="Get the latest elder care insights & NRI updates"
           primaryBtnText="Speak to Advisor"
           primaryBtnAction={onOpenBookingModal}
           secondaryBtnText="Browse services"
           secondaryBtnAction={() => { setActivePage('services'); window.scrollTo(0, 0); }}
           variant="news"
-        />
+        /> */}
 
       </div>
     </div>

@@ -197,9 +197,9 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
                 className="w-full h-full object-cover"
                 style={{ objectPosition: getObjectPosition(service.id) }}
               />
-              <span className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1 rounded-lg">
+              {/* <span className="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1 rounded-lg">
 
-              </span>
+              </span> */}
             </div>
 
             {/* Workflow Steps */}

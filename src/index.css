@@ -211,3 +211,12 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Desktop-only Hero Background Mask (Keeps Mobile 100% full bleed untouched) */
+@media (min-width: 1024px) {
+  .hero-desktop-mask {
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.7) 40%, black 65%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 15%, rgba(0,0,0,0.7) 40%, black 65%);
+  }
+}
+

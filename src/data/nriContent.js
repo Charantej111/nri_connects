@@ -551,19 +551,19 @@ export const NEWS_ARTICLES = [
     url: "https://www.financialexpress.com/nri/",
     image: getAssetUrl('Property Care_1.jpg')
   },
+  // {
+  //   id: 2,
+  //   title: "Doorstep Digital Life Certificate & Health Care Coverage for NRI Parents",
+  //   category: "PENSION & ELDER CARE",
+  //   date: "June 2026",
+  //   readTime: "4 min read",
+  //   snippet: "Latest RBI and government updates on digital life certificate submissions, doorstep biometric verification, and health insurance coverage for aging parents in India.",
+  //   source: "Google News",
+  //   url: "https://news.google.com/search?q=NRI+parent+care+India",
+  //   image: getAssetUrl('Pensioners Assistance_1.png')
+  // },
   {
     id: 2,
-    title: "Doorstep Digital Life Certificate & Health Care Coverage for NRI Parents",
-    category: "PENSION & ELDER CARE",
-    date: "June 2026",
-    readTime: "4 min read",
-    snippet: "Latest RBI and government updates on digital life certificate submissions, doorstep biometric verification, and health insurance coverage for aging parents in India.",
-    source: "Google News",
-    url: "https://news.google.com/search?q=NRI+parent+care+India",
-    image: getAssetUrl('Pensioners Assistance_1.png')
-  },
-  {
-    id: 3,
     title: "Community News & Diaspora Guidance for Indian Families Living Overseas",
     category: "COMMUNITY & HEALTH",
     date: "May 2026",
@@ -574,7 +574,7 @@ export const NEWS_ARTICLES = [
     image: getAssetUrl('Quick Medical Facility_1.jpeg')
   },
   {
-    id: 4,
+    id: 3,
     title: "FEMA Compliance, Property Transfers & Tax Updates for Non-Resident Indians",
     category: "FINANCE & TAXATION",
     date: "February 2026",
@@ -585,7 +585,7 @@ export const NEWS_ARTICLES = [
     image: getAssetUrl('Property Care_2.png')
   },
   {
-    id: 5,
+    id: 4,
     title: "Latest Trends in Real Estate & Senior Elder Care in India",
     category: "TRENDS & INSIGHTS",
     date: "November 2025",
