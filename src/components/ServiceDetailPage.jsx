@@ -55,22 +55,22 @@ export default function ServiceDetailPage({ service: propService, serviceId, set
     setSubmitted(true);
   };
 
-  // PRIMARY Photo: local _2 images (used in landing page cards & detail page primary view)
+  // PRIMARY Photo: local _3 images (used in view detail service first image place)
   const primaryPhotos = {
-    'property-care': getAssetUrl('Property Care_2.png'),
-    'quick-medical-facility': getAssetUrl('Quick Medical Facility_2.png'),
-    'provision-of-attendants': getAssetUrl('Provision Of Attendants_2.png'),
-    'routine-health-exercise': getAssetUrl('Routine Health Exercise_2.png'),
-    'house-maintenance': getAssetUrl('House Maintenance_2.png'),
-    'pensioners-assistance': getAssetUrl('Pensioners Assistance_2.png'),
-    'courier-services': getAssetUrl('Courier Services_2.png'),
-    'home-made-pickles': getAssetUrl('Home Made Pickles_2.png'),
-    'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
-    'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
-    'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
-    'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
-    'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
-    'site-preparation-and-grading': getAssetUrl('Site preparation and grading_2.png'),
+    'property-care': getAssetUrl('Property Care_3.png'),
+    'quick-medical-facility': getAssetUrl('Quick Medical Facility_3.png'),
+    'provision-of-attendants': getAssetUrl('Provision of Attendants_3.png'),
+    'routine-health-exercise': getAssetUrl('Routine Health Exercise_3.png'),
+    'house-maintenance': getAssetUrl('House Maintenance_3.png'),
+    'pensioners-assistance': getAssetUrl('Pensioners Assistance_3.png'),
+    'courier-services': getAssetUrl('Courier Services_3.png'),
+    'home-made-pickles': getAssetUrl('Home Made Pickles_3.png'),
+    'recreation-and-outing': getAssetUrl('Recreation and Outing_3.png'),
+    'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_3.png'),
+    'visa-assistance': getAssetUrl('Visa Assistance_3.png'),
+    'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation and Design_3.png'),
+    'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_3.png'),
+    'site-preparation-and-grading': getAssetUrl('Site Preparation and Grading_3.png'),
   };
 
   // SECONDARY Photo: local _1 images (on-ground field execution photos)

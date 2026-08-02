@@ -7,22 +7,22 @@ import {
 import { SERVICES_CATALOG } from '../data/nriContent';
 import { getAssetUrl } from '../utils/assets';
 
-// Landing Page service card images (local _2 images uploaded by user)
-const service2Photos = {
-  'property-care': getAssetUrl('Property Care_2.png'),
-  'quick-medical-facility': getAssetUrl('Quick Medical Facility_2.png'),
-  'provision-of-attendants': getAssetUrl('Provision Of Attendants_2.png'),
-  'routine-health-exercise': getAssetUrl('Routine Health Exercise_2.png'),
-  'house-maintenance': getAssetUrl('House Maintenance_2.png'),
-  'pensioners-assistance': getAssetUrl('Pensioners Assistance_2.png'),
-  'courier-services': getAssetUrl('Courier Services_2.png'),
-  'home-made-pickles': getAssetUrl('Home Made Pickles_2.png'),
-  'recreation-and-outing': getAssetUrl('Recreation and Outing_2.png'),
-  'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_2.png'),
-  'visa-assistance': getAssetUrl('Visa Assistance_2.png'),
-  'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation_2.png'),
-  'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_2.png'),
-  'site-preparation-and-grading': getAssetUrl('Site preparation and grading_2.png'),
+// Service card images (local _3 images uploaded by user)
+const service3Photos = {
+  'property-care': getAssetUrl('Property Care_3.png'),
+  'quick-medical-facility': getAssetUrl('Quick Medical Facility_3.png'),
+  'provision-of-attendants': getAssetUrl('Provision of Attendants_3.png'),
+  'routine-health-exercise': getAssetUrl('Routine Health Exercise_3.png'),
+  'house-maintenance': getAssetUrl('House Maintenance_3.png'),
+  'pensioners-assistance': getAssetUrl('Pensioners Assistance_3.png'),
+  'courier-services': getAssetUrl('Courier Services_3.png'),
+  'home-made-pickles': getAssetUrl('Home Made Pickles_3.png'),
+  'recreation-and-outing': getAssetUrl('Recreation and Outing_3.png'),
+  'tours-and-travels-abroad': getAssetUrl('Tours and Travels Abroad_3.png'),
+  'visa-assistance': getAssetUrl('Visa Assistance_3.png'),
+  'false-ceiling-installation-and-design': getAssetUrl('False Ceiling Installation and Design_3.png'),
+  'commercial-land-leasing': getAssetUrl('Commercial Land Leasing_3.png'),
+  'site-preparation-and-grading': getAssetUrl('Site Preparation and Grading_3.png'),
 };
 
 // Shift the focus of specific service images slightly downward to fit better
@@ -130,7 +130,7 @@ export default function ServicesSection({ onSelectService, setActivePage, onOpen
         {/* Clean Webflow Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((svc) => {
-            const cardPhoto = service2Photos[svc.id] || svc.image;
+            const cardPhoto = service3Photos[svc.id] || svc.image;
             return (
               <div
                 key={svc.id}

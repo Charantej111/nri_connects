@@ -215,7 +215,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
               </p>
 
               {/* CTA & Slide Dots */}
-              <div className="pt-1 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
+              <div className="pt-1 flex flex-col sm:flex-row items-center lg:items-center justify-center lg:justify-start gap-4">
                 <button
                   onClick={() => { setActivePage(currentSlide.targetPage); window.scrollTo(0, 0); }}
                   className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center space-x-2"
@@ -225,7 +225,7 @@ export default function HeroSection({ setActivePage, onOpenBookingModal }) {
                 </button>
 
                 {/* Touch Slide Dots */}
-                <div className="flex items-center justify-center space-x-1.5 pt-2 sm:pt-3">
+                <div className="flex items-center justify-center space-x-1.5">
                   {slides.map((s, idx) => (
                     <button
                       key={s.id}
