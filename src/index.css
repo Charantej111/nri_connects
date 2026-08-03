@@ -220,3 +220,35 @@
   }
 }
 
+/* Animated Doodle Heart Stroke Keyframes */
+@keyframes heartDash {
+  0% {
+    stroke-dashoffset: 180;
+  }
+  40% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(6deg);
+  }
+}
+
+.animate-heart-draw {
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: heartDash 3.5s cubic-bezier(0.65, 0, 0.35, 1) infinite alternate;
+}
+
+.animate-heart-pulse {
+  animation: heartPulse 3s ease-in-out infinite;
+}
+

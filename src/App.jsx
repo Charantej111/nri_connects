@@ -6,6 +6,7 @@ import ServiceDetailPage from './components/ServiceDetailPage';
 import WhyChooseUs from './components/WhyChooseUs';
 import TestimonialsSection from './components/TestimonialsSection';
 import AboutUsSection from './components/AboutUsSection';
+import AboutUsPage from './components/AboutUsPage';
 import GallerySection from './components/GallerySection';
 import NewsSection from './components/NewsSection';
 import ContactSection from './components/ContactSection';
@@ -144,11 +145,8 @@ export default function App() {
 
         {activePage === 'about' && (
           <div className="pt-16">
-            <AboutUsSection 
+            <AboutUsPage 
               setActivePage={setActivePage}
-              onOpenBookingModal={() => setBookingModalOpen(true)}
-            />
-            <WhyChooseUs 
               onOpenBookingModal={() => setBookingModalOpen(true)}
             />
           </div>

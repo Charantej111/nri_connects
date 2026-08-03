@@ -2,7 +2,7 @@ import React from 'react';
 import { Shield, Users, Award, Heart, CheckCircle2 } from 'lucide-react';
 import { getAssetUrl } from '../utils/assets';
 
-export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
+export default function AboutUsSection({ setActivePage, onOpenBookingModal, hideButtons = false, hideEyebrow = false }) {
   return (
     <div className="py-24 sm:py-32 bg-white font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-fade-up">
@@ -53,9 +53,11 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
 
             <div className="space-y-4">
               {/* Eyebrow Tag */}
-              <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-4 py-1.5 rounded-full inline-block">
-                About NRI Connects
-              </span>
+              {!hideEyebrow && (
+                <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-4 py-1.5 rounded-full inline-block">
+                  About NRI Connects
+                </span>
+              )}
 
               {/* Highlighted Heading with Curved Underline */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15] font-display">
@@ -124,21 +126,23 @@ export default function AboutUsSection({ setActivePage, onOpenBookingModal }) {
             </div>
 
             {/* CTA Buttons */}
-            <div className="pt-4 flex flex-wrap gap-4">
-              <button
-                onClick={() => { setActivePage('about'); window.scrollTo(0, 0); }}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-colors"
-              >
-                More about us
-              </button>
+            {!hideButtons && (
+              <div className="pt-4 flex flex-wrap gap-4">
+                <button
+                  onClick={() => { setActivePage('about'); window.scrollTo(0, 0); }}
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-colors"
+                >
+                  More about us
+                </button>
 
-              <button
-                onClick={() => { setActivePage('services'); window.scrollTo(0, 0); }}
-                className="bg-white border border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-7 py-3.5 rounded-full font-bold text-sm transition-colors"
-              >
-                Browse services
-              </button>
-            </div>
+                <button
+                  onClick={() => { setActivePage('services'); window.scrollTo(0, 0); }}
+                  className="bg-white border border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-7 py-3.5 rounded-full font-bold text-sm transition-colors"
+                >
+                  Browse services
+                </button>
+              </div>
+            )}
 
           </div>
 

@@ -53,7 +53,7 @@ export default function WhyChooseUs({ onOpenBookingModal }) {
                 <HeartHandshake className="w-8 h-8 text-white mx-auto mb-2" />
                 <span className="block text-2xl font-extrabold">100% Trust</span>
                 <span className="block text-xs text-emerald-100 mt-1">
-                  Empowering 50,000+ NRIs to care for family in India with confidence.
+                  Empowering NRIs to care for family in Hyderabad & Khammam with confidence.
                 </span>
               </div>
 
