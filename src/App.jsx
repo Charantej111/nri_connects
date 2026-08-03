@@ -144,6 +144,10 @@ export default function App() {
 
         {activePage === 'about' && (
           <div className="pt-16">
+            <AboutUsSection 
+              setActivePage={setActivePage}
+              onOpenBookingModal={() => setBookingModalOpen(true)}
+            />
             <WhyChooseUs 
               onOpenBookingModal={() => setBookingModalOpen(true)}
             />
